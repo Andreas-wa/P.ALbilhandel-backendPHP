@@ -1,37 +1,21 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 </head>
 <body>
 
-<?php
-    session_start();
+    <h1>Login system</h1>
 
-    echo (isset($_GET['err']) && $_GET['err'] == true ? "något gick fel!" : "");
+    <form method="POST" action="user-function/login_function.php">
+        <input type="text" name="username" placeholder="username" required>
+        <input type="password" name="password" placeholder="password" required>
+        <button type="submit" name="submit">Skicka</button>
+    </form>
 
-    if(isset($_SESSION['username'])){
-        echo "hej " . $_SESSION['username'] . "<br />";
-        echo '<a href="logout.php">logga ut!<a />';
-    }   else{
-        include("loginForm.php");
-        include("signUp.php");
-    }
-
-?>
-
-<?php
-/*
-echo "<pre>";
-while ($row = $rows->fetch(PDO::FETCH_ASSOC)){
-    //echo $row['name']. "<br />";
-    //print_r($row);
-
-    echo "<span> Namn: </span>" . " " . $row['name']. "<br />";
-    echo "<span> Kommentar: </span>" . " " . $row['message']. "<br />";
-    echo "<a href=\"login.php?action=delete&id=". $row['id'] . "\">Delete!</a>";
-    echo "<hr />";
-}
-echo "<pre />";*/
-?>
+    <button><a href="signup.php">Signup</a></button>
 
 </body>
 </html>
