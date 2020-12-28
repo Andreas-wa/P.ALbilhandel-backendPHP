@@ -10,7 +10,7 @@ echo "Kommentara som: " . $_SESSION['username'];
 </head>
 <body>
     <form method="POST" action="Includes/write_comment_functions.php">
-        <input name="post_id" type="hidden" value='<?php echo $_GET['post'];?>'>
+        <input name="car_id" type="hidden" value='<?php echo $_GET['car'];?>'>
         <textarea name="content" id="" cols="40" rows="3" placeholder="Skriv för fan.."></textarea>
         <br>
         <button name="submit">Skicka</button>

@@ -57,14 +57,14 @@ $category = $_POST['category'];
 $description = $_POST['description'];
 $user_id = $_SESSION['id'];
 
-$query_post = "INSERT INTO posts(userID, title, category, description, image) VALUES (:user_id, :title, :category, :description, :file_new_name);";
-$sth_writepost = $dbh->prepare($query_post);
-$sth_writepost->bindParam(':user_id', $user_id);
-$sth_writepost->bindParam(':title', $title);
-$sth_writepost->bindParam(':category', $category);
-$sth_writepost->bindParam(':description', $description);
-$sth_writepost->bindParam(':file_new_name', $file_new_name);
-$return = $sth_writepost->execute();
+$query_car = "INSERT INTO cars(userID, title, category, description, image) VALUES (:user_id, :title, :category, :description, :file_new_name);";
+$sth_writecar = $dbh->prepare($query_car);
+$sth_writecar->bindParam(':user_id', $user_id);
+$sth_writecar->bindParam(':title', $title);
+$sth_writecar->bindParam(':category', $category);
+$sth_writecar->bindParam(':description', $description);
+$sth_writecar->bindParam(':file_new_name', $file_new_name);
+$return = $sth_writecar->execute();
 
 if (!$return) {
     print_r($dbh->errorInfo());

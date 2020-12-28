@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+<center>
     <?php
     session_start(); 
     echo "<div class='login-user-text'>";
@@ -16,14 +17,17 @@
     ?> 
 <div class="body_wrapper">
 
+<!--  title   -->
+<div class="header-text">
+    <h1>P.AL bilhandel</h1>
+</div>
 
 <?php
 
-    echo "<div class='header_wrapper'>";
-    
+    echo "<div class='header_wrapper'>";    
     
 if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){    
-    echo "<button><a href='index.php?page=writepost'><i class='far fa-edit fa-2x'></i></a></button>";
+    echo "<button><a href='index.php?page=writecar'><i class='far fa-edit fa-2x'></i></a></button>";
 }
     
 if (!isset($_SESSION['username'])){
@@ -48,19 +52,13 @@ if (!isset($_SESSION['username'])){
     
     echo "</div>";
     echo "</div>";
-?>
-    <div class="header-text">
-    <center><h1>BLOGGEN</h1></center>
-    <h6>MILHOUSE FINA BLOGGSIDA</h6>
+?>  
 
-    </div>
-        
-    
-
+    <!--  latest cars  -->
     <div class="content_container">
-    <h2>Senaste inläggen:</h2>
+    <h2>Senaste bilarna:</h2>
     <?php
-    include('Views/show_posts.php');
+    include('Views/show_cars.php');
 
     ?>
     
@@ -70,18 +68,14 @@ if (!isset($_SESSION['username'])){
         echo "Du är nu registrerad!";
     }
     ?>
-    
-
 
 
 </div>
+</center>
+<!-- <div class="footer_wrapper">
+        <i class="fas fa-home"></i>
+        <i class="fas fa-phone"></i>
+    </div> -->
 
-<div class="footer_wrapper">
-                  
-            <i class="fas fa-home">  Tulegatan 29</i>
-            &copy; Milhouse AB 
-            <i class="fas fa-phone">  070-5620022</i>
-   
-</div>
 </body>
 </html>

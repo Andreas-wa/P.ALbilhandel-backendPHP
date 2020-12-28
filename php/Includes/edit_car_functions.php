@@ -56,22 +56,22 @@ $description = $_POST['description'];
 $image = $_POST['image'];
 //$userID = $_SESSION['id'];
 
-$post_id = $_GET['post'];
+$car_id = $_GET['car'];
 
     // update 
-$edit_post_query = "UPDATE posts SET title=:title, category=:category, 
-description=:description, image=:file_new_name WHERE id = :post_id";
-$sth_update_post = $dbh->prepare($edit_post_query);
-$sth_update_post->bindParam(':title', $title);
-$sth_update_post->bindParam(':category', $category);
-$sth_update_post->bindParam(':description', $description);
-$sth_update_post->bindParam(':file_new_name', $file_new_name);
-$sth_update_post->bindParam(':post_id', $post_id);
-$return_update_post = $sth_update_post->execute();
+$edit_car_query = "UPDATE cars SET title=:title, category=:category, 
+description=:description, image=:file_new_name WHERE id = :car_id";
+$sth_update_car = $dbh->prepare($edit_car_query);
+$sth_update_car->bindParam(':title', $title);
+$sth_update_car->bindParam(':category', $category);
+$sth_update_car->bindParam(':description', $description);
+$sth_update_car->bindParam(':file_new_name', $file_new_name);
+$sth_update_car->bindParam(':car_id', $car_id);
+$return_update_car = $sth_update_car->execute();
 //die;
 
 
-if (!$return_update_post) {
+if (!$return_update_car) {
     print_r($dbh->errorInfo());
     // annars kommer den att skicka användaren vidare till index.php(start sidan).
 } else {

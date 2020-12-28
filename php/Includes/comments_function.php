@@ -13,9 +13,9 @@ class GBpost{
 
     }
 
-    public function fetchAll($post_id){
+    public function fetchAll($car_id){
     
-        $query = "SELECT comments.id, content, date, postID, userID, users.username FROM comments JOIN users ON users.id = comments.userID WHERE postID = $post_id ORDER BY date $this->order ";
+        $query = "SELECT comments.id, content, date, carID, userID, users.username FROM comments JOIN users ON users.id = comments.userID WHERE carID = $car_id ORDER BY date $this->order ";
         
         $return_array = $this->data_base_handler->query($query);
         $return_array = $return_array->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +24,7 @@ class GBpost{
         
     }
 
-    public function getPosts(){
+    public function getCars(){
 
         return $this->comments;
 
