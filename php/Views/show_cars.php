@@ -8,7 +8,7 @@
     if (isset($_GET['car'])){
 
         $car_id = $_GET['car'];
-        $query_car_data = "SELECT id, userID, title, description, category, image, date FROM cars WHERE id = $car_id";
+        $query_car_data = "SELECT id, userID, title, description, manufacturers, year, distance, image, date FROM cars WHERE id = $car_id";
         $return = $dbh->query($query_car_data);
         $row = $return->fetch(PDO::FETCH_ASSOC); 
 
@@ -23,14 +23,18 @@
 
             echo "<div class='car_wrapper'>";
             echo "<div class='car_header'>";
-            echo "Säljare: " . $row_username['username'] . "<br />";
-            // echo "Märke: " . $row['category'] . "<br />";
-            echo "<br />";
-            echo "</div>";
-            echo "<center>";
             echo "<div class='car-title'>";
             echo "<h3>" . $row['title'] . "</h3>";
             echo "</div>";
+            // echo "Säljare: " . $row_username['username'] . "<br />";
+            echo "Märke: " . $row['manufacturers'] . "<br />";
+            echo "<br />";
+            echo "Årsmodell: " . $row['year'] . "<br />";
+            echo "<br />";
+            echo "Miltal: " . $row['distance'] . "<br />";
+            echo "</div>";
+            echo "<center>";
+            echo "<br />";
             echo "<div class='car-description'>";
             echo $row['description'] . "<br />";
             echo "<img src='uploads/" . $row['image'] . "'><br />";
@@ -102,20 +106,35 @@
 
     
 
-    $query_blogcars = "SELECT id, userID, title, description, category, image, date FROM cars ORDER BY date $order";
-    $rows_cars = $dbh->query($query_blogcars);
+    $query_shopcars = "SELECT id, userID, title, description, manufacturers, year, distance, image, date FROM cars ORDER BY date $order";
+    $rows_cars = $dbh->query($query_shopcars);
     
     echo "<br/ >";
     if(isset($_GET['car']) == true){
     while($row = $rows_cars->fetch(PDO::FETCH_ASSOC)){
-        //echo "<center>";
+        // echo "<center>";
+        echo "<br/ >";
+
         echo '<a href="index.php?car='.$row["id"].'">' . $row['title'] . "</a><br />";
-        //echo "</center>";
+        echo "<img src='uploads/" . $row['image'] . "'><br />";
+
+        echo "<h4>Publicerades: " . $row['date'] . "</h4>";
+        echo "<br/ >";
+
+        // echo "</center>";
         }     
     } else {
         while($row = $rows_cars->fetch(PDO::FETCH_ASSOC)){
             //echo "<center>";
+
             echo '<a href="index.php?car='.$row["id"].'">' . $row['title'] . "</a><br />";
+            echo "<img src='uploads/" . $row['image'] . "'><br />";
+
+            echo $row['date'];
+            echo "<br/ >";
+
+
+
             //echo "</center>";
         
     }

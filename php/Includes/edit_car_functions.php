@@ -50,8 +50,10 @@
            }
    }
 
-   $title = $_POST['title'];
-$category = $_POST['category'];
+$title = $_POST['title'];
+$manufacturers = $_POST['manufacturers'];
+$year = $_POST['year'];
+$distance = $_POST['distance'];
 $description = $_POST['description'];
 $image = $_POST['image'];
 //$userID = $_SESSION['id'];
@@ -59,17 +61,18 @@ $image = $_POST['image'];
 $car_id = $_GET['car'];
 
     // update 
-$edit_car_query = "UPDATE cars SET title=:title, category=:category, 
+$edit_car_query = "UPDATE cars SET title=:title, manufacturers=:manufacturers, year=:year, distance=:distance,
 description=:description, image=:file_new_name WHERE id = :car_id";
-$sth_update_car = $dbh->prepare($edit_car_query);
-$sth_update_car->bindParam(':title', $title);
-$sth_update_car->bindParam(':category', $category);
+$sth_update_car = $dbh->prepare($edit_car_query); 
+$sth_update_car->bindParam(':title', $title); 
+$sth_update_car->bindParam(':manufacturers', $manufacturers);
+$sth_update_car->bindParam(':year', $year);
+$sth_update_car->bindParam(':distance', $distance);
 $sth_update_car->bindParam(':description', $description);
 $sth_update_car->bindParam(':file_new_name', $file_new_name);
 $sth_update_car->bindParam(':car_id', $car_id);
 $return_update_car = $sth_update_car->execute();
 //die;
-
 
 if (!$return_update_car) {
     print_r($dbh->errorInfo());

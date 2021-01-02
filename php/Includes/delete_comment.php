@@ -18,5 +18,4 @@ if (!$return) {
     header("location:../index.php?car=$car_id&showcomments=true");
 }
 
-
 ?>
