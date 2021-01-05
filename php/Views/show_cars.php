@@ -1,16 +1,13 @@
-
-    <?php
-    
+    <?php    
  
     $order = 'desc';
-    
 
     if (isset($_GET['car'])){
 
         $car_id = $_GET['car'];
         $query_car_data = "SELECT id, userID, title, description, manufacturers, year, distance, image, date FROM cars WHERE id = $car_id";
         $return = $dbh->query($query_car_data);
-        $row = $return->fetch(PDO::FETCH_ASSOC); 
+        $row = $return->fetch(PDO::FETCH_ASSOC);
 
         $query_username = "SELECT users.username FROM users JOIN cars ON cars.userID = users.id WHERE cars.id = $car_id";
         $return_username = $dbh->query($query_username);
@@ -104,7 +101,6 @@
             echo "</div>";
     }
 
-    
 
     $query_shopcars = "SELECT id, userID, title, description, manufacturers, year, distance, image, date FROM cars ORDER BY date $order";
     $rows_cars = $dbh->query($query_shopcars);
