@@ -13,10 +13,10 @@
         $return_username = $dbh->query($query_username);
         $row_username = $return_username->fetch(PDO::FETCH_ASSOC);
 
-        $query_comments_amount = "SELECT id FROM comments WHERE carID=:car_id";
-        $sth_comments_amount = $dbh->prepare($query_comments_amount);         
-        $sth_comments_amount->bindParam(':car_id', $car_id);
-        $return_comments_amount = $sth_comments_amount->execute();
+        // $query_comments_amount = "SELECT id FROM comments WHERE carID=:car_id";
+        // $sth_comments_amount = $dbh->prepare($query_comments_amount);         
+        // $sth_comments_amount->bindParam(':car_id', $car_id);
+        // $return_comments_amount = $sth_comments_amount->execute();
 
             echo "<div class='car_wrapper'>";
             echo "<div class='car_header'>";
@@ -30,19 +30,19 @@
             echo "<br />";
             echo "Miltal: " . $row['distance'] . "<br />";
             echo "</div>";
-            echo "<center>";
+            // echo "<center>";
             echo "<br />";
             echo "<div class='car-description'>";
             echo $row['description'] . "<br />";
             echo "<img src='uploads/" . $row['image'] . "'><br />";
             echo "</div>";
             echo $row['date'];
-            echo "</center>";
+            // echo "</center>";
             echo "<div class='car_footer'>";
             if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
-            echo "<center><a href='index.php?page=editcar&car=" . $car_id . "'>Redigera inlägg</a></center>";
+            echo "<a href='index.php?page=editcar&car=" . $car_id . "'>Redigera inlägg</a>";
             echo "</br>";
-            echo "<center><a href='Includes/delete_car.php?car=" . $car_id . "'><i class='fas fa-trash-alt fa-2x'></i></a></center>";
+            echo "<a href='Includes/delete_car.php?car=" . $car_id . "'><i class='fas fa-trash-alt fa-2x'></i></a>";
             }
             echo "</br>";
             
@@ -59,44 +59,44 @@
             echo "</center>";
             */
             
-            if (isset($_GET['showcomments']) && $_GET['showcomments'] == 'true'){
-                echo "<div class='comments_link'>";
-                echo "<br/><a href='index.php?car=$car_id'>". $sth_comments_amount->rowCount() . " Kommentarer</a><hr />";
-                echo "</div>";
-            }
-            else{
-                echo "<br/><a href='index.php?car=$car_id&showcomments=true'>". $sth_comments_amount->rowCount() . " Kommentarer</a><hr />";
-                echo "<hr class='hr'>";
-            }
+            // if (isset($_GET['showcomments']) && $_GET['showcomments'] == 'true'){
+            //     echo "<div class='comments_link'>";
+            //     echo "<br/><a href='index.php?car=$car_id'>". $sth_comments_amount->rowCount() . " Kommentarer</a><hr />";
+            //     echo "</div>";
+            // }
+            // else{
+            //     echo "<br/><a href='index.php?car=$car_id&showcomments=true'>". $sth_comments_amount->rowCount() . " Kommentarer</a><hr />";
+            //     echo "<hr class='hr'>";
+            // }
             
 
-            if(isset($_GET['showcomments']) && $_GET['showcomments'] == 'true'){
-                include("Includes/comments_function.php");
+            // if(isset($_GET['showcomments']) && $_GET['showcomments'] == 'true'){
+            //     include("Includes/comments_function.php");
 
-                $comments = new GBPost($dbh);
+            //     $comments = new GBPost($dbh);
 
-                $comments->fetchAll($car_id);
+            //     $comments->fetchAll($car_id);
                 
-                foreach($comments->getCars() as $comments){
-                echo "<center>";
-                echo "<b>Användare: </b>" .  $comments['username'] . "<br />";
-                echo $comments['content']  . "<br />";
-                echo $comments['date']  . "<br />";
+            //     foreach($comments->getCars() as $comments){
+            //     echo "<center>";
+            //     echo "<b>Användare: </b>" .  $comments['username'] . "<br />";
+            //     echo $comments['content']  . "<br />";
+            //     echo $comments['date']  . "<br />";
                 
-                if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
-                    echo "<a href='Includes/delete_comment.php?car=" . $car_id . "&id=" . $comments['id'] . "'>Ta Bort</a><br />";
-                }
-               echo "<hr />";
-                }
+            //     if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
+            //         echo "<a href='Includes/delete_comment.php?car=" . $car_id . "&id=" . $comments['id'] . "'>Ta Bort</a><br />";
+            //     }
+            //    echo "<hr />";
+            //     }
 
-                  if (isset($_SESSION['id']) && $_SESSION['id'] == true){
-                    include('Views/comment.php');
-                }  
-                else{
-                    echo "Logga in för att kommentera!<hr/>";
-                }
-            }
-            echo "</center>";
+            //       if (isset($_SESSION['id']) && $_SESSION['id'] == true){
+            //         include('Views/comment.php');
+            //     }  
+            //     else{
+            //         echo "Logga in för att kommentera!<hr/>";
+            //     }
+            // }
+            // echo "</center>";
             echo "</div>";
             echo "</div>";
     }
