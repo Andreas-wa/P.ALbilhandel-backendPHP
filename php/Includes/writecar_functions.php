@@ -51,15 +51,17 @@ $manufacturers = $_POST['manufacturers'];
 $distance = $_POST['distance'];
 $year = $_POST['year'];
 $description = $_POST['description'];
+$price = $_POST['price'];
 $user_id = $_SESSION['id'];
 
-$query_car = "INSERT INTO cars(userID, title, manufacturers, year, distance, description, image) VALUES (:user_id, :title, :manufacturers, :year, :distance, :description, :file_new_name);";
+$query_car = "INSERT INTO cars(userID, title, manufacturers, year, distance, price, description, image) VALUES (:user_id, :title, :manufacturers, :year, :distance, :description, :file_new_name);";
 $sth_writecar = $dbh->prepare($query_car);
 $sth_writecar->bindParam(':user_id', $user_id);
 $sth_writecar->bindParam(':title', $title);
 $sth_writecar->bindParam(':manufacturers', $manufacturers);
 $sth_writecar->bindParam(':distance', $distance);
 $sth_writecar->bindParam(':year', $year);
+$sth_writecar->bindParam(':price', $price);
 $sth_writecar->bindParam(':description', $description);
 $sth_writecar->bindParam(':file_new_name', $file_new_name);
 $return = $sth_writecar->execute();

@@ -30,7 +30,8 @@
                 "manufacturers" => $manufacturers,
                 "year" => $year,
                 "distance" => $distance,
-                "description" => $description
+                "description" => $description,
+                "image" => $image
             );
 
             array_push($carArr["body"], $e);

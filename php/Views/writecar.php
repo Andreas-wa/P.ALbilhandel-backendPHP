@@ -18,10 +18,36 @@
     echo "<b> Bilmärken: </b> <br />";
     echo "<select name='manufacturers' id='manufacturers' required>";
     echo "<option value='' disabled selected>Välj bil märke</option>";
+    echo "<option value='Alfa Romeo'>Alfa Romeo</option>";
     echo "<option value='Audi'>Audi</option>";
-    echo "<option value='Volvo'>Volvo</option>";
     echo "<option value='BMW'>BMW</option>";
-    echo "<option value='Skoda'>Skoda</option>";
+    echo "<option value='Citoen'>Citoen</option>";
+    echo "<option value='Dacia'>Dacia</option>";
+    echo "<option value='Fiat'>Fiat</option>";
+    echo "<option value='Ford'>Ford</option>";
+    echo "<option value='Honda'>Honda</option>";
+    echo "<option value='Hyndai'>Hyndai</option>";
+    echo "<option value='Jeep'>Jeep</option>";
+    echo "<option value='Kia'>Kia</option>";
+    echo "<option value='Land Rover'>Hyndai</option>";
+    echo "<option value='Lexus'>Lexus</option>";
+    echo "<option value='Mazda'>Mazda</option>";
+    echo "<option value='Mercedes-Benz'>Mercedes-Benz</option>";
+    echo "<option value='Mini'>Mini</option>";
+    echo "<option value='Mitsubishi'>Mitsubishi</option>";
+    echo "<option value='Nissan'>Nissan</option>";
+    echo "<option value='Opel'>Opel</option>";
+    echo "<option value='Peugeot'>Peugeot</option>";
+    echo "<option value='Renault'>Renault</option>";
+    echo "<option value='Saab'>Saab</option>";
+    echo "<option value='Seat'>Seat</option>";
+    echo "<option value='Subaru'>Subaru</option>";
+    echo "<option value='Suzuki'>Suzuki</option>";
+    echo "<option value='Tesla'>Tesla</option>";
+    echo "<option value='Toyota'>Toyota</option>";
+    echo "<option value='Volkswagen'>Volkswagen</option>";
+    echo "<option value='Volvo'>Volvo</option>";
+    echo "<option value='Övrigt'>Övrigt</option>";
     echo "</select>";
     echo "<br />";
     echo "<br />";
@@ -34,6 +60,10 @@
     // årsmodell
     echo "<b> Årsmodell:</b> <br/>";
     echo "<input type='number' name='year' required><br />";
+    echo "<br />";
+
+    echo "<b> Pris(kr):</b> <br/>";
+    echo "<input type='number' name='price' required><br />";
     echo "<br />";
 
     // beskrivningen

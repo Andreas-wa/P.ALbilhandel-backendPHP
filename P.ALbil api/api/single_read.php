@@ -19,17 +19,18 @@
 
     if($item->title != null){
         // create array
-        $emp_arr = array(
+        $car_arr = array(
             "id" =>  $item->id,
             "title" => $item->title,
             "manufacturers" => $item->manufacturers,
             "year" => $item->year,
             "distance" => $item->distance,
-            "description" => $item->description
+            "description" => $item->description,
+            "image" => $item->image
         );
       
         http_response_code(200);
-        echo json_encode($emp_arr, JSON_UNESCAPED_UNICODE);
+        echo json_encode($car_arr, JSON_UNESCAPED_UNICODE);
     }
       
     else{

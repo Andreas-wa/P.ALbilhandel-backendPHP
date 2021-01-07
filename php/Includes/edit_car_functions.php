@@ -54,6 +54,7 @@ $title = $_POST['title'];
 $manufacturers = $_POST['manufacturers'];
 $year = $_POST['year'];
 $distance = $_POST['distance'];
+$price = $_POST['price'];
 $description = $_POST['description'];
 $image = $_POST['image'];
 //$userID = $_SESSION['id'];
@@ -61,13 +62,14 @@ $image = $_POST['image'];
 $car_id = $_GET['car'];
 
     // update 
-$edit_car_query = "UPDATE cars SET title=:title, manufacturers=:manufacturers, year=:year, distance=:distance,
+$edit_car_query = "UPDATE cars SET title=:title, manufacturers=:manufacturers, year=:year, distance=:distance, price=:price,
 description=:description, image=:file_new_name WHERE id = :car_id";
 $sth_update_car = $dbh->prepare($edit_car_query); 
 $sth_update_car->bindParam(':title', $title); 
 $sth_update_car->bindParam(':manufacturers', $manufacturers);
 $sth_update_car->bindParam(':year', $year);
 $sth_update_car->bindParam(':distance', $distance);
+$sth_update_car->bindParam(':price', $price);
 $sth_update_car->bindParam(':description', $description);
 $sth_update_car->bindParam(':file_new_name', $file_new_name);
 $sth_update_car->bindParam(':car_id', $car_id);

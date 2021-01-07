@@ -1,0 +1,67 @@
+.content_container{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content_container_title{
+    display: flex;
+    justify-content: center;
+}
+
+.content_container img{
+    width: 20vw;
+    height: 20vh;
+    // display: none;
+}
+
+.home_car{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.home_car a{
+    text-decoration: none;
+    color: black;
+}
+
+.home_car_info{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 60vw;
+    
+}
+
+.home_car_title{
+    font-size: larger;
+}
+
+.home_car_year{
+    padding: 5px;
+    margin: 5px;
+}
+
+.home_car_distance{
+    padding: 5px;
+    margin: 5px;
+}
+.home_car_price{
+    padding: 5px;
+    margin: 5px;
+}
+
+.home_car_date{
+    padding: 5px;
+    margin: 5px;
+}

@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <link rel="stylesheet" href="CSS/style.css"> -->
+    <title>P.ALbilhandel</title>
+    <link rel="stylesheet" href="CSS/index.scss">
+    <link rel="stylesheet" href="CSS/navbar.scss">
+    <link rel="stylesheet" href="CSS/tableCars.scss">
+    <link rel="stylesheet" href="CSS/car.scss">
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
 
+    <!-- <div>
+      <nav class="navbar">
+        <a href="" class="navbar__link">Meddelanden</a>
+        <a href="" class="navbar__link">Bilar</a>
+          <!-- <a href="" class="navbar__link">Meddelanden</a> -->
+      <!-- </nav> -->
+    <!-- </div> -->
+
 <?php
 include('Includes/database_connections.php');
 
 $page = (isset($_GET['page']) ? $_GET['page'] : '');
-
 
 if($page == "login"){
     include("Views/login.php");
@@ -42,6 +52,7 @@ if($page == "writecar"){
 }
 
 echo (isset($_GET['login']) && $_GET['login'] == true ? "<center><a href='Includes/logout_functions.php'>Logga Ut</a></center>" : "");
+
 
 ?>
 

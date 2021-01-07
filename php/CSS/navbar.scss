@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar__link {
+    margin: 1em;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
+    color: #181818;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .navbar__link:hover {
+    transform: translateY(-2px);
+  }
+  
+  .login-user-text{
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      padding: 1px;
+  }
