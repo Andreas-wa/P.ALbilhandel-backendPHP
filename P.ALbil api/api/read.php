@@ -35,7 +35,7 @@
 
             array_push($carArr["body"], $e);
         }
-        echo json_encode($carArr);
+        echo json_encode($carArr, JSON_UNESCAPED_UNICODE);
     }
 
     else{
