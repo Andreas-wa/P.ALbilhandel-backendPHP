@@ -30,6 +30,7 @@
                 "manufacturers" => $manufacturers,
                 "year" => $year,
                 "distance" => $distance,
+                "price" => $price,
                 "description" => $description,
                 "image" => $image
             );

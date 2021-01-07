@@ -25,6 +25,7 @@
             "manufacturers" => $item->manufacturers,
             "year" => $item->year,
             "distance" => $item->distance,
+            "price" => $item->price,
             "description" => $item->description,
             "image" => $item->image
         );

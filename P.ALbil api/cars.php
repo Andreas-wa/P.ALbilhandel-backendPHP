@@ -18,7 +18,7 @@
 
         // GET ALL
         public function getcars(){
-            $sqlQuery = "SELECT id, title, manufacturers, year, distance, description, image FROM " . $this->db_table . "";
+            $sqlQuery = "SELECT id, title, manufacturers, year, distance, price, description, image FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
             return $stmt;
@@ -32,6 +32,7 @@
                         manufacturers,
                         year,
                         distance,
+                        price,
                         description,
                         image
                       FROM
@@ -53,6 +54,7 @@
             $this->manufacturers = $dataRow['manufacturers'];
             $this->year = $dataRow['year'];
             $this->distance = $dataRow['distance'];
+            $this->price = $dataRow['price'];
             $this->description = $dataRow['description'];
             $this->image = $dataRow['image'];
 
