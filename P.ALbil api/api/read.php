@@ -27,6 +27,7 @@
             $e = array(
                 "id" => $id,
                 "title" => $title,
+                "reg" => $reg,
                 "manufacturers" => $manufacturers,
                 "year" => $year,
                 "distance" => $distance,

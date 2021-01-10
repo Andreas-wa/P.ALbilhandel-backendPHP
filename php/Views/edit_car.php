@@ -7,7 +7,7 @@
     if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
     
     $car_id = $_GET['car'];
-    $update_car_query = "SELECT id, userID, title, description, manufacturers, year, distance, price, image, date FROM cars WHERE id = :car_id;";
+    $update_car_query = "SELECT id, userID, title, reg, description, manufacturers, year, distance, price, image, date FROM cars WHERE id = :car_id;";
     $sth_update_car = $dbh->prepare($update_car_query);
     $sth_update_car->bindParam(':car_id', $car_id);
     $return_update_car = $sth_update_car->execute();
@@ -22,6 +22,10 @@
     // Ändra titel
     echo "<b>Titel:</b><br />";
     echo "<input type='text' name='title' value='" . $row_edit_car['title'] ."' required><br />";
+    echo "<br />";
+
+    echo "<b>Regnummer:</b><br />";
+    echo "<input type='text' name='reg' required><br />";
     echo "<br />";
     
     // Ändra märket
@@ -51,6 +55,7 @@
     echo "<option value='Renault'>Renault</option>";
     echo "<option value='Saab'>Saab</option>";
     echo "<option value='Seat'>Seat</option>";
+    echo "<option value='Skoda'>Skoda</option>";
     echo "<option value='Subaru'>Subaru</option>";
     echo "<option value='Suzuki'>Suzuki</option>";
     echo "<option value='Tesla'>Tesla</option>";

@@ -47,17 +47,19 @@ session_start();
 }
 
 $title = $_POST['title'];
+$reg = $_POST['reg'];
 $manufacturers = $_POST['manufacturers'];
 $distance = $_POST['distance'];
 $year = $_POST['year'];
-$description = $_POST['description'];
 $price = $_POST['price'];
+$description = $_POST['description'];
 $user_id = $_SESSION['id'];
 
-$query_car = "INSERT INTO cars(userID, title, manufacturers, year, distance, price, description, image) VALUES (:user_id, :title, :manufacturers, :year, :distance, :description, :file_new_name);";
+$query_car = "INSERT INTO cars(userID, title, reg, manufacturers, year, distance, price, description, image) VALUES (:user_id, :title, :reg, :manufacturers, :year, :distance, :price, :description, :file_new_name);";
 $sth_writecar = $dbh->prepare($query_car);
 $sth_writecar->bindParam(':user_id', $user_id);
 $sth_writecar->bindParam(':title', $title);
+$sth_writecar->bindParam(':reg', $reg);
 $sth_writecar->bindParam(':manufacturers', $manufacturers);
 $sth_writecar->bindParam(':distance', $distance);
 $sth_writecar->bindParam(':year', $year);

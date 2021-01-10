@@ -14,6 +14,11 @@
     echo "<input type='text' name='title' required><br />";
     echo "<br />";
 
+    // regnummer för bilen
+    echo "<b>Regnummer:</b><br />";
+    echo "<input type='text' name='reg' required><br />";
+    echo "<br />";
+
     // rullgardin med bilmärken
     echo "<b> Bilmärken: </b> <br />";
     echo "<select name='manufacturers' id='manufacturers' required>";
@@ -41,6 +46,7 @@
     echo "<option value='Renault'>Renault</option>";
     echo "<option value='Saab'>Saab</option>";
     echo "<option value='Seat'>Seat</option>";
+    echo "<option value='Skoda'>Skoda</option>";
     echo "<option value='Subaru'>Subaru</option>";
     echo "<option value='Suzuki'>Suzuki</option>";
     echo "<option value='Tesla'>Tesla</option>";

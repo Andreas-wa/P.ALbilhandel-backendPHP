@@ -22,6 +22,7 @@
         $car_arr = array(
             "id" =>  $item->id,
             "title" => $item->title,
+            "reg" => $item->reg,
             "manufacturers" => $item->manufacturers,
             "year" => $item->year,
             "distance" => $item->distance,

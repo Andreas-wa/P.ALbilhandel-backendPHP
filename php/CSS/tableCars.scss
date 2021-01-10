@@ -16,52 +16,98 @@
     // display: none;
 }
 
-.home_car{
-    display: flex;
-    flex-wrap: wrap;
-    width: auto;
-    height: auto;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
-    margin: 5px;
-    border: 1px solid grey;
-    border-radius: 5px;
+// .home_car{
+//     display: flex;
+//     flex-wrap: wrap;
+//     width: auto;
+//     height: auto;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     padding: 5px;
+//     margin: 5px;
+//     border: 1px solid grey;
+//     border-radius: 5px;
+// }
+
+// .home_car a{
+//     text-decoration: none;
+//     color: black;
+// }
+
+// .home_car_info{
+//     display: flex;
+//     justify-content: space-between;
+//     flex-direction: row;
+//     width: 60vw;
+    
+// }
+
+// .home_car_title{
+//     font-size: larger;
+// }
+
+// .home_car_year{
+//     padding: 5px;
+//     margin: 5px;
+// }
+
+// .home_car_distance{
+//     padding: 5px;
+//     margin: 5px;
+// }
+// .home_car_price{
+//     padding: 5px;
+//     margin: 5px;
+// }
+
+// .home_car_date{
+//     padding: 5px;
+//     margin: 5px;
+// }
+
+
+h1 {
+    text-align: center;
+  }
+  
+.tbl {
+    overflow-x: auto;
 }
 
-.home_car a{
+.tbl a {
     text-decoration: none;
     color: black;
 }
 
-.home_car_info{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 60vw;
+table {
+    border-collapse: collapse;
+    border-spacing: 1px;
+    width: 80vw;
+}
+    .bot:nth-of-type(even) {
+        background-color: #ccc;
+    }
+      .bot:hover {
+        background-color: #ddd;
+      }
+      .bot {
+        border: 1px solid #333;
+      }
+      .top {
+        border: 1px solid #333;
+        background-color: green;
+        color: white;
+      }
+      th, td {
+        text-align: center;
+        padding: 10px;
+        width: 15%;
+      }
     
-}
-
-.home_car_title{
-    font-size: larger;
-}
-
-.home_car_year{
-    padding: 5px;
-    margin: 5px;
-}
-
-.home_car_distance{
-    padding: 5px;
-    margin: 5px;
-}
-.home_car_price{
-    padding: 5px;
-    margin: 5px;
-}
-
-.home_car_date{
-    padding: 5px;
-    margin: 5px;
-}
+    @media screen and (max-width: 800px) {
+      .notOnPhone {
+        display: none;
+      }
+    }
+  

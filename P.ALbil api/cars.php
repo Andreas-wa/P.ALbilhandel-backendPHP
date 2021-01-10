@@ -18,7 +18,7 @@
 
         // GET ALL
         public function getcars(){
-            $sqlQuery = "SELECT id, title, manufacturers, year, distance, price, description, image FROM " . $this->db_table . "";
+            $sqlQuery = "SELECT id, title, reg, manufacturers, year, distance, price, description, image FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
             return $stmt;
@@ -29,6 +29,7 @@
             $sqlQuery = "SELECT
                         id, 
                         title,
+                        reg,
                         manufacturers,
                         year,
                         distance,
@@ -51,6 +52,7 @@
             
             $this->id = $dataRow['id'];
             $this->title = $dataRow['title'];
+            $this->reg = $dataRow['reg'];
             $this->manufacturers = $dataRow['manufacturers'];
             $this->year = $dataRow['year'];
             $this->distance = $dataRow['distance'];

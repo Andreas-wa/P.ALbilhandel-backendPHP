@@ -5,7 +5,7 @@
     if (isset($_GET['car'])){
 
         $car_id = $_GET['car'];
-        $query_car_data = "SELECT id, userID, title, description, manufacturers, year, distance, price, image, date FROM cars WHERE id = $car_id";
+        $query_car_data = "SELECT id, userID, title, reg, description, manufacturers, year, distance, price, image, date FROM cars WHERE id = $car_id";
         $return = $dbh->query($query_car_data);
         $row = $return->fetch(PDO::FETCH_ASSOC);
 
@@ -21,13 +21,46 @@
             // class för all data  
             echo "<div class='car_wrapper'>";
             
+            // echo "<table>";
+            // echo "<colgroup span={4}></colgroup>";
+
             // div för car data
             echo "<div class='car_wrapper_info'>";
             
+            // echo "<thead>";
+            // echo '<tr className="top">';
+            // echo "<th>Regnr</th>";
+            // echo "<th>Titel</th>";
+            // echo "<th>Märke</th>";
+            // echo '<th className="notOnPhone">Årsmodell</th>';
+            // echo '<th className="notOnPhone">Miltal</th>';
+            // echo '<th>Pris</th>';
+            // echo '</tr>';
+            // echo "</thead>";
+
+            // echo "<tbody>";
+            // echo "<tr>";
+            // echo "<td>Regnr</td>";
+            // echo "<td>" . $row['title'] . "</td>";
+            // echo "<td>" . $row['manufacturers'] . "</td>";
+            // echo '<td>' . $row['year'] . '</td>';
+            // echo '<td>' . $row['distance'] . '</td>';
+            // echo '<td>' . $row['price'] . '</td>';
+            // echo "</tr>";
+            // echo "</tbody>";
+
+
             // div för titel
             echo "<div class='car_wrapper_title'>";
-            echo "<h3> Rubrik:" . $row['title'] . "</h3>";
+            echo "<h3>Rubrik: " . $row['title'] . "</h3>";
             echo "</div>";
+
+            // div för regnummer
+            echo "<div class='car_wrapper_reg'>";
+            echo "Regnummer: " . $row['reg'] . "</h3>";
+            echo "</div>";
+
+            echo "<br />";
 
             // div för tillverkaren
             // echo "Säljare: " . $row_username['username'] . "<br />";
@@ -41,17 +74,19 @@
             echo "<div class='car_wrapper_year'>";
             echo "Årsmodell: " . $row['year'] . "<br />";
             echo "</div>";
+
             echo "<br />";
             
             // div för miltal
+
             echo "<div class='car_wrapper_distance'>";
-            echo "Miltal: " . $row['distance'] . "<br />";
+            echo "Miltal(km): " . $row['distance'] . "<br />";
             echo "</div>";
             echo "<br />";
 
             // div för pris
             echo "<div class='car_wrapper_price'>";
-            echo "Pris: " . $row['price'] . "<br />";
+            echo "Pris(kr): " . $row['price'] . "<br />";
             echo "</div>";
             echo "<br />";
 
@@ -60,7 +95,9 @@
             
             // div för beskrivningen
             echo "<div class='car_wrapper_description'>";
-            echo $row['description'] . "<br />";
+            echo "Beskrivning: <br />" .$row['description'] . "<br />";
+            echo "<br />";
+
 
             // div för bild
             echo "<div class='car_wrapper_image'>";
@@ -82,6 +119,7 @@
             }
             echo "</br>";
             
+            echo "</table>";
             /*$carDeleted = new GBcar($dbh);
 
             $carDeleted->fetchAll($car_id);
@@ -136,45 +174,132 @@
             echo "</div>";
     }
 
+    
 
-    $query_shopcars = "SELECT id, userID, title, description, manufacturers, year, distance, price, image, date FROM cars ORDER BY date $order";
+    $query_shopcars = "SELECT id, userID, title, reg, description, manufacturers, year, distance, price, image, date FROM cars ORDER BY date $order";
     $rows_cars = $dbh->query($query_shopcars);
     
     echo "<br/ >";
     if(isset($_GET['car']) == true){
+        echo '<a href="index.php"><i class="fas fa-backspace fa-3x"></i></a>';
+
     while($row = $rows_cars->fetch(PDO::FETCH_ASSOC)){
         // echo "<center>";
-        echo "<br/ >";
-        echo '<div class="home_car"><a href="index.php?car='.$row["id"].'">';            
-        echo '<h4 class="home_car_title">' . $row['title'] . "</h4><br />";
-        echo '<div class="home_car_info">';
-        // echo "<img src='uploads/" . $row['image'] . "'><br />";
-        echo '<h4 class="home_car_year">Årsmodell: <br/>' . $row['year'] . "</h4>";
-        echo '<h4 class="home_car_distance">Miltal(km): <br/>' . $row['distance'] . "</h4>";
-        echo '<h4 class="home_car_price">Pris: <br/>' . $row['price'] . "</h4>";
-        echo '<h4 class="home_car_date"> Publicerades: <br/>' . $row['date'] . "</h4>";
-        echo "<br/ >";
-        echo "</div>";
-        echo "</a></div>";
+        // echo "<br/ >";
+        // echo '<div class="home_car"><a href="index.php?car='.$row["id"].'">';            
+        // echo '<h4 class="home_car_title">' . $row['title'] . "</h4><br />";
+        // echo '<div class="home_car_info">';
+        // // echo "<img src='uploads/" . $row['image'] . "'><br />";
+        // echo '<h4 class="home_car_year">Årsmodell: <br/>' . $row['year'] . "</h4>";
+        // echo '<h4 class="home_car_distance">Miltal(km): <br/>' . $row['distance'] . "</h4>";
+        // echo '<h4 class="home_car_price">Pris: <br/>' . $row['price'] . "</h4>";
+        // echo '<h4 class="home_car_date"> Publicerades: <br/>' . $row['date'] . "</h4>";
+        // echo "<br/ >";
+        // echo "</div>";
+        // echo "</a></div>";  
+        
+        // echo "<div class='tbl'>";
+
+        // echo "<table>";
+        // echo "<colgroup span={4}></colgroup>";
+
+        // // div för car data
+        
+        // echo "<thead>";
+        // echo '<tr class="top">';
+        // echo "<th>Regnr</th>";
+        // echo "<th>Titel</th>";
+        // echo "<th>Märke</th>";
+        // echo '<th className="notOnPhone">Årsmodell</th>';
+        // echo '<th className="notOnPhone">Miltal</th>';
+        // echo '<th>Pris</th>';
+        // echo '</tr>';
+        // echo "</thead>";
+
+        // echo "<tbody>";
+        // echo "<tr class='bot'>";
+        // echo "<td>Regnr</td>";
+        // echo "<td>" . $row['title'] . "</td>";
+        // echo "<td>" . $row['manufacturers'] . "</td>";
+        // echo '<td>' . $row['year'] . '</td>';
+        // echo '<td>' . $row['distance'] . '</td>';
+        // echo '<td>' . $row['price'] . '</td>';
+        // echo '<td><a href="index.php?car='.$row["id"].'"><i class="fas fa-pen fa-2x"></a></td>';
+        // echo "</tr>";
+        // echo "</tbody>";
+        // echo "</div>";
 
 
         // echo "</center>";
         }     
     } else {
+                    // echo "<div class='tbl'>";
+
+
+        echo '<table>';
+
+        echo "<thead>";
+            echo '<tr class="top">';
+            echo "<th>Regnr</th>";
+            echo "<th>Titel</th>";
+            echo "<th>Märke</th>";
+            echo '<th className="notOnPhone">Årsmodell</th>';
+            echo '<th className="notOnPhone">Miltal</th>';
+            echo '<th>Pris</th>';
+            echo '</tr>';
+            echo "</thead>";
+
+            echo '</table>';
+
         while($row = $rows_cars->fetch(PDO::FETCH_ASSOC)){
             //echo "<center>";
-            echo '<div class="home_car"><a href="index.php?car='.$row["id"].'">';            
-            echo '<h4 class="home_car_title">' . $row['title'] . "</h4><br />";
-            echo '<div class="home_car_info">';
-            // echo "<img src='uploads/" . $row['image'] . "'><br />";
-            echo '<h4 class="home_car_year">Årsmodell: <br/>' . $row['year'] . "</h4>";
-            echo '<h4 class="home_car_distance">Miltal(km): <br/>' . $row['distance'] . "</h4>";
-            echo '<h4 class="home_car_price">Pris: <br/>' . $row['price'] . "</h4>";
-            echo '<h4 class="home_car_date"> Publicerades: <br/>' . $row['date'] . "</h4>";
-            echo "<br/ >";
-            echo "</div>";
-            echo "</a></div>";
+            // echo '<div class="home_car"><a href="index.php?car='.$row["id"].'">';            
+            // echo '<h4 class="home_car_title">' . $row['title'] . "</h4><br />";
+            // echo '<div class="home_car_info">';
+            // // echo "<img src='uploads/" . $row['image'] . "'><br />";
+            // echo '<h4 class="home_car_year">Årsmodell: <br/>' . $row['year'] . "</h4>";
+            // echo '<h4 class="home_car_distance">Miltal(km): <br/>' . $row['distance'] . "</h4>";
+            // echo '<h4 class="home_car_price">Pris: <br/>' . $row['price'] . "</h4>";
+            // echo '<h4 class="home_car_date"> Publicerades: <br/>' . $row['date'] . "</h4>";
+            // echo "<br/ >";
+            // echo "</div>";
+            // echo "</a></div>";
 
+
+
+            echo "<div class='tbl'>";
+
+            echo '<a href="index.php?car='.$row["id"].'">';
+            echo '<table>';
+            
+            echo "<colgroup span={4}></colgroup>";
+
+            // div för car data
+            // echo "<thead>";
+            // echo '<tr class="top">';
+            // echo "<th>Regnr</th>";
+            // echo "<th>Titel</th>";
+            // echo "<th>Märke</th>";
+            // echo '<th className="notOnPhone">Årsmodell</th>';
+            // echo '<th className="notOnPhone">Miltal</th>';
+            // echo '<th>Pris</th>';
+            // echo '</tr>';
+            // echo "</thead>";
+
+            echo '<tbody>';
+            echo '<tr class="bot">';
+            echo "<td>" . $row['reg'] . "</td>";            
+            echo "<td>" . $row['title'] . "</td>";
+            echo "<td>" . $row['manufacturers'] . "</td>";
+            echo '<td>' . $row['year'] . '</td>';
+            echo '<td>' . $row['distance'] . '</td>';
+            echo '<td>' . $row['price'] . '</td>';
+            // echo '<th><i class="fas fa-eye fa-2x"></a></th>';
+            echo "</tr>";
+            echo "</tbody>";
+            echo "</div>";
+            echo "</table>";
+            echo '</a>';
 
 
 
