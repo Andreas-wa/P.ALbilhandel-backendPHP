@@ -17,13 +17,13 @@
   
     $item->getSinglecar();
 
-    if($item->title != null){
+    if($item->model != null){
         // create array
         $car_arr = array(
             "id" =>  $item->id,
-            "title" => $item->title,
-            "reg" => $item->reg,
             "manufacturers" => $item->manufacturers,
+            "model" => $item->model,
+            "reg" => $item->reg,
             "year" => $item->year,
             "distance" => $item->distance,
             "price" => $item->price,

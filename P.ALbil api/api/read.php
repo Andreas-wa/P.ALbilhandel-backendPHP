@@ -26,9 +26,9 @@
             extract($row);
             $e = array(
                 "id" => $id,
-                "title" => $title,
-                "reg" => $reg,
                 "manufacturers" => $manufacturers,
+                "model" => $model,
+                "reg" => $reg,
                 "year" => $year,
                 "distance" => $distance,
                 "price" => $price,

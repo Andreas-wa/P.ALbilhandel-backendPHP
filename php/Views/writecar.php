@@ -9,16 +9,6 @@
     echo "<form method='POST' action='Includes/writecar_functions.php' enctype='multipart/form-data'>";
     echo "<div class='writecar-input_container'>";
 
-    // titel för bilen
-    echo "<b>Titel:</b><br />";
-    echo "<input type='text' name='title' required><br />";
-    echo "<br />";
-
-    // regnummer för bilen
-    echo "<b>Regnummer:</b><br />";
-    echo "<input type='text' name='reg' required><br />";
-    echo "<br />";
-
     // rullgardin med bilmärken
     echo "<b> Bilmärken: </b> <br />";
     echo "<select name='manufacturers' id='manufacturers' required>";
@@ -58,6 +48,16 @@
     echo "<br />";
     echo "<br />";
 
+    // Model för bilen
+    echo "<b>Model:</b><br />";
+    echo "<input type='text' name='model' required><br />";
+    echo "<br />";
+
+    // regnummer för bilen
+    echo "<b>Regnummer:</b><br />";
+    echo "<input type='text' name='reg' required><br />";
+    echo "<br />";
+
     // miltal
     echo "<b> Miltal(km):</b> <br/>";
     echo "<input type='number' name='distance' required><br />";
@@ -68,6 +68,7 @@
     echo "<input type='number' name='year' required><br />";
     echo "<br />";
 
+    // pris
     echo "<b> Pris(kr):</b> <br/>";
     echo "<input type='number' name='price' required><br />";
     echo "<br />";

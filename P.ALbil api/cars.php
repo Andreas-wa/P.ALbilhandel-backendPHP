@@ -9,7 +9,7 @@
 
         // Columns
         public $id;
-        public $title;
+        public $model;
 
         // Db connection
         public function __construct($db){
@@ -18,7 +18,7 @@
 
         // GET ALL
         public function getcars(){
-            $sqlQuery = "SELECT id, title, reg, manufacturers, year, distance, price, description, image FROM " . $this->db_table . "";
+            $sqlQuery = "SELECT id, reg, manufacturers, model, year, distance, price, description, image FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
             return $stmt;
@@ -28,9 +28,9 @@
         public function getSinglecar(){
             $sqlQuery = "SELECT
                         id, 
-                        title,
                         reg,
                         manufacturers,
+                        model,
                         year,
                         distance,
                         price,
@@ -51,7 +51,7 @@
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
             
             $this->id = $dataRow['id'];
-            $this->title = $dataRow['title'];
+            $this->model = $dataRow['model'];
             $this->reg = $dataRow['reg'];
             $this->manufacturers = $dataRow['manufacturers'];
             $this->year = $dataRow['year'];

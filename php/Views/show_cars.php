@@ -5,7 +5,7 @@
     if (isset($_GET['car'])){
 
         $car_id = $_GET['car'];
-        $query_car_data = "SELECT id, userID, title, reg, description, manufacturers, year, distance, price, image, date FROM cars WHERE id = $car_id";
+        $query_car_data = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, image, date FROM cars WHERE id = $car_id";
         $return = $dbh->query($query_car_data);
         $row = $return->fetch(PDO::FETCH_ASSOC);
 
@@ -30,7 +30,7 @@
             // echo "<thead>";
             // echo '<tr className="top">';
             // echo "<th>Regnr</th>";
-            // echo "<th>Titel</th>";
+            // echo "<th>Model</th>";
             // echo "<th>Märke</th>";
             // echo '<th className="notOnPhone">Årsmodell</th>';
             // echo '<th className="notOnPhone">Miltal</th>';
@@ -41,7 +41,7 @@
             // echo "<tbody>";
             // echo "<tr>";
             // echo "<td>Regnr</td>";
-            // echo "<td>" . $row['title'] . "</td>";
+            // echo "<td>" . $row['model'] . "</td>";
             // echo "<td>" . $row['manufacturers'] . "</td>";
             // echo '<td>' . $row['year'] . '</td>';
             // echo '<td>' . $row['distance'] . '</td>';
@@ -50,22 +50,24 @@
             // echo "</tbody>";
 
 
-            // div för titel
-            echo "<div class='car_wrapper_title'>";
-            echo "<h3>Rubrik: " . $row['title'] . "</h3>";
-            echo "</div>";
-
-            // div för regnummer
-            echo "<div class='car_wrapper_reg'>";
-            echo "Regnummer: " . $row['reg'] . "</h3>";
-            echo "</div>";
-
-            echo "<br />";
-
             // div för tillverkaren
             // echo "Säljare: " . $row_username['username'] . "<br />";
             echo "<div class='car_wrapper_manufacturers'>";
             echo "Märke: " . $row['manufacturers'] . "<br />";
+            echo "</div>";
+
+            echo "<br />";
+
+            // div för Model
+            echo "<div class='car_wrapper_model'>";
+            echo "Model: " . $row['model'];
+            echo "</div>";
+
+            echo "<br/>";
+
+            // div för regnummer
+            echo "<div class='car_wrapper_reg'>";
+            echo "Regnummer: " . $row['reg'];
             echo "</div>";
 
             echo "<br />";
@@ -176,7 +178,7 @@
 
     
 
-    $query_shopcars = "SELECT id, userID, title, reg, description, manufacturers, year, distance, price, image, date FROM cars ORDER BY date $order";
+    $query_shopcars = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, image, date FROM cars ORDER BY date $order";
     $rows_cars = $dbh->query($query_shopcars);
     
     echo "<br/ >";
@@ -187,7 +189,7 @@
         // echo "<center>";
         // echo "<br/ >";
         // echo '<div class="home_car"><a href="index.php?car='.$row["id"].'">';            
-        // echo '<h4 class="home_car_title">' . $row['title'] . "</h4><br />";
+        // echo '<h4 class="home_car_model">' . $row['model'] . "</h4><br />";
         // echo '<div class="home_car_info">';
         // // echo "<img src='uploads/" . $row['image'] . "'><br />";
         // echo '<h4 class="home_car_year">Årsmodell: <br/>' . $row['year'] . "</h4>";
@@ -208,7 +210,7 @@
         // echo "<thead>";
         // echo '<tr class="top">';
         // echo "<th>Regnr</th>";
-        // echo "<th>Titel</th>";
+        // echo "<th>Model</th>";
         // echo "<th>Märke</th>";
         // echo '<th className="notOnPhone">Årsmodell</th>';
         // echo '<th className="notOnPhone">Miltal</th>';
@@ -219,7 +221,7 @@
         // echo "<tbody>";
         // echo "<tr class='bot'>";
         // echo "<td>Regnr</td>";
-        // echo "<td>" . $row['title'] . "</td>";
+        // echo "<td>" . $row['Model'] . "</td>";
         // echo "<td>" . $row['manufacturers'] . "</td>";
         // echo '<td>' . $row['year'] . '</td>';
         // echo '<td>' . $row['distance'] . '</td>';
@@ -240,9 +242,9 @@
 
         echo "<thead>";
             echo '<tr class="top">';
-            echo "<th>Regnr</th>";
-            echo "<th>Titel</th>";
             echo "<th>Märke</th>";
+            echo "<th>Model</th>";
+            echo "<th>Regnr</th>";
             echo '<th className="notOnPhone">Årsmodell</th>';
             echo '<th className="notOnPhone">Miltal</th>';
             echo '<th>Pris</th>';
@@ -254,7 +256,7 @@
         while($row = $rows_cars->fetch(PDO::FETCH_ASSOC)){
             //echo "<center>";
             // echo '<div class="home_car"><a href="index.php?car='.$row["id"].'">';            
-            // echo '<h4 class="home_car_title">' . $row['title'] . "</h4><br />";
+            // echo '<h4 class="home_car_model">' . $row['model'] . "</h4><br />";
             // echo '<div class="home_car_info">';
             // // echo "<img src='uploads/" . $row['image'] . "'><br />";
             // echo '<h4 class="home_car_year">Årsmodell: <br/>' . $row['year'] . "</h4>";
@@ -278,7 +280,7 @@
             // echo "<thead>";
             // echo '<tr class="top">';
             // echo "<th>Regnr</th>";
-            // echo "<th>Titel</th>";
+            // echo "<th>Model</th>";
             // echo "<th>Märke</th>";
             // echo '<th className="notOnPhone">Årsmodell</th>';
             // echo '<th className="notOnPhone">Miltal</th>';
@@ -288,9 +290,9 @@
 
             echo '<tbody>';
             echo '<tr class="bot">';
-            echo "<td>" . $row['reg'] . "</td>";            
-            echo "<td>" . $row['title'] . "</td>";
             echo "<td>" . $row['manufacturers'] . "</td>";
+            echo "<td>" . $row['model'] . "</td>";
+            echo "<td>" . $row['reg'] . "</td>";            
             echo '<td>' . $row['year'] . '</td>';
             echo '<td>' . $row['distance'] . '</td>';
             echo '<td>' . $row['price'] . '</td>';
