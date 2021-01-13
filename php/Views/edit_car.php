@@ -7,11 +7,20 @@
     if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
     
     $car_id = $_GET['car'];
-    $update_car_query = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, image, date FROM cars WHERE id = :car_id;";
+    $update_car_query = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, date FROM cars WHERE id = :car_id;";
     $sth_update_car = $dbh->prepare($update_car_query);
     $sth_update_car->bindParam(':car_id', $car_id);
     $return_update_car = $sth_update_car->execute();
     $row_edit_car = $sth_update_car->fetch(PDO::FETCH_ASSOC);
+
+    $query_image = "SELECT images.file_name, images.id FROM images JOIN cars ON cars.id = images.car_id WHERE cars.id = $car_id";
+    $return_image = $dbh->query($query_image);
+    $sth_update_car->bindParam(':car_id', $car_id);
+    $row_image = $return_image->fetchAll(PDO::FETCH_ASSOC);
+
+    // $image_id = $row_image["images.id"];
+
+    // print_r($return_image);
 
     // skriver ut timodeltel(modeln för caren som har givits), kategori(med "företaget","nyheter" osv)
     // , description(textfält), knapp där man kan sicka in filer i.
@@ -63,11 +72,10 @@
     echo "<input type='text' name='model' value='" . $row_edit_car['model'] ."' required><br />";
     echo "<br />";
 
-    // ändra regnummer
+    // regnummer för bilen
     echo "<b>Regnummer:</b><br />";
     echo "<input type='text' name='reg' required><br />";
     echo "<br />";
-    
 
     // Ändra miltal
     echo "<b> Miltal(km):</b> <br/>";
@@ -92,10 +100,16 @@
 
     // Ändra Bilder
     echo "<b>Bifoga bild:</b><br />";
-    echo "<input type='file' name='file' id='fileToUpload'><br />";
+    echo "<input type='file' name='file[]' id='fileToUpload' multiple><br />";
     echo "<br />";
-    echo "<img src='uploads/" . $row_edit_car['image'] . "'><br />";
+
+    foreach($row_image as $images){
+        echo "<img src='uploads/" . $images['file_name'] . "'width='300' height='150'><br />";
+    }
+    // echo "<img src='uploads/" . $row_image['file_name'] . "'><br />";
+
     echo "<br />";
+
     echo "<input type='submit' name='submit' value='Publicera' />";
     echo "</div>";
     echo "</form>";

@@ -80,7 +80,7 @@
 
     // bilder
     echo "<b>Bifoga bild:</b><br />";
-    echo "<input type='file' name='file' id='fileToUpload'><br />";
+    echo "<input type='file' name='file[]' id='fileToUpload' multiple><br />";
     echo "<br />";
     
     // publicera knapp

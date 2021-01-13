@@ -47,6 +47,10 @@ if($page == "home"){
     include("Views/home.php");
 }
 
+// if($page == "home"){
+//     include("Views/upload.php");
+// }
+
 if($page == "writecar"){
     include("Views/writecar.php");
 }

@@ -5,13 +5,20 @@
     if (isset($_GET['car'])){
 
         $car_id = $_GET['car'];
-        $query_car_data = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, image, date FROM cars WHERE id = $car_id";
+        $query_car_data = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, date FROM cars WHERE id = $car_id";
         $return = $dbh->query($query_car_data);
         $row = $return->fetch(PDO::FETCH_ASSOC);
 
         $query_username = "SELECT users.username FROM users JOIN cars ON cars.userID = users.id WHERE cars.id = $car_id";
         $return_username = $dbh->query($query_username);
         $row_username = $return_username->fetch(PDO::FETCH_ASSOC);
+
+        // $image_id = $_GET['car'];
+        $query_image = "SELECT images.file_name FROM images JOIN cars ON cars.id = images.car_id WHERE cars.id = $car_id";
+        $return_image = $dbh->query($query_image);
+        $row_image = $return_image->fetchAll(PDO::FETCH_ASSOC);
+
+        // print_r($row_image);
 
         // $query_comments_amount = "SELECT id FROM comments WHERE carID=:car_id";
         // $sth_comments_amount = $dbh->prepare($query_comments_amount);         
@@ -101,9 +108,13 @@
             echo "<br />";
 
 
+            
             // div för bild
             echo "<div class='car_wrapper_image'>";
-            echo "<img src='uploads/" . $row['image'] . "'><br />";
+            
+            foreach($row_image as $images){
+                echo "<img src='uploads/" . $images['file_name'] . "'><a href='Includes/delete_image.php?car=" . $car_id . "&file_name=" . $images['file_name'] . "'><i class='fas fa-trash-alt fa-2x'></i></a><br />";
+            }
             echo "</div>";
 
             // div för datum
@@ -175,10 +186,9 @@
             // echo "</center>";
             echo "</div>";
     }
-
     
 
-    $query_shopcars = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, image, date FROM cars ORDER BY date $order";
+    $query_shopcars = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, date FROM cars ORDER BY date $order";
     $rows_cars = $dbh->query($query_shopcars);
     
     echo "<br/ >";
