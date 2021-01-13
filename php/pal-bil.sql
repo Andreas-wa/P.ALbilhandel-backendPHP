@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 11 jan 2021 kl 16:43
+-- Tid vid skapande: 13 jan 2021 kl 15:12
 -- Serverversion: 10.4.11-MariaDB
 -- PHP-version: 7.4.2
 
@@ -38,7 +38,6 @@ CREATE TABLE `cars` (
   `distance` int(10) NOT NULL,
   `price` int(10) NOT NULL,
   `description` text NOT NULL,
-  `image` varchar(100) NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -46,15 +45,49 @@ CREATE TABLE `cars` (
 -- Dumpning av Data i tabell `cars`
 --
 
-INSERT INTO `cars` (`id`, `userID`, `model`, `reg`, `manufacturers`, `year`, `distance`, `price`, `description`, `image`, `date`) VALUES
-(1, 1, 'Säljer min fina Audi', 'bca504', 'Audi', 2015, 8999, 500000, 'Säljer nu min fina Audi för att jag vill testa på en nyare modell.', '5fef0ff9d64ac1.81452621.jpg', '2020-12-29 14:56:41'),
-(2, 1, 'Säljer min audi', 'nba782', 'Audi', 2018, 8999, 150000, 'fin fin bil', '5fef1337b15024.91814977.jpg', '2020-12-30 14:14:49'),
-(10, 1, 'Säljer Skodan', 'bka511', 'Skoda', 2015, 9999, 100000, 'Säljer min skoda ', ' ', '2021-01-05 12:07:09'),
-(12, 1, 'A3', 'hqu589', 'Audi', 2016, 2999, 200000, 'hejhejhejhehhehheh', ' ', '2021-01-05 13:12:16'),
-(16, 1, 's', 'jds289', 'Tesla', 2019, 1000, 1000000, 'el bil', ' ', '2021-01-10 15:40:20'),
-(17, 1, 'C4', 'haj199', 'Alfa Romeo', 2017, 29999, 405000, 'test', ' ', '2021-01-10 15:49:27'),
-(18, 1, 'Fabia', 'thu289', 'Skoda', 2015, 28999, 105000, 'skoda', ' ', '2021-01-10 16:55:22'),
-(19, 1, 'A4', 'wcw706', 'Audi', 2019, 9999, 500000, 'fin fin audi', '5ffc6f04eabb66.00921021.jpg', '2021-01-11 16:30:12');
+INSERT INTO `cars` (`id`, `userID`, `model`, `reg`, `manufacturers`, `year`, `distance`, `price`, `description`, `date`) VALUES
+(60, 1, 'A3', 'sad222', 'Audi', 2000, 2000, 200000, 'fin fin audi A3', '2021-01-13 11:01:43'),
+(64, 1, 'M4', 'haj199', 'BMW', 2000, 29999, 20000000, 'bmw', '2021-01-13 14:48:27'),
+(65, 1, 'clio', 'ytt888', 'Renault', 2016, 20000, 90000, 'ajajajaj', '2021-01-13 15:07:45'),
+(66, 1, 'Fabia', 'uha991', 'Skoda', 2020, 0, 400000, 'test data', '2021-01-13 15:11:31');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `car_id` varchar(11) NOT NULL,
+  `file_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumpning av Data i tabell `images`
+--
+
+INSERT INTO `images` (`id`, `car_id`, `file_name`) VALUES
+(16, '60', '5ffec50770b9e3.08281498.jpg'),
+(17, '60', '5ffec50771ad09.41607591.jpg'),
+(18, '60', '5ffec50772edd7.84796213.jpg'),
+(19, '60', '5ffec50773f4e9.70681299.jpg'),
+(20, '61', '5ffec80087aa75.06588289.jpg'),
+(21, '61', '5ffec80088f878.76424355.jpg'),
+(22, '62', 'pexels-pixabay-38637.jpg'),
+(23, '62', 'pexels-pixabay-38637.jpg'),
+(24, '62', 'pexels-pixabay-38637.jpg'),
+(25, '62', 'pexels-pixabay-38637.jpg'),
+(26, '62', 'pexels-pixabay-38637.jpg'),
+(29, '63', '5ffeea31b11068.90982266.jpg'),
+(30, '63', '5ffeea31b37f20.61561504.jpg'),
+(36, '60', '5ffef9c8258fd9.74700880.jpg'),
+(37, '60', '5ffef9d9179fe5.41022244.jpg'),
+(51, '64', '5ffefd8b0cfc98.71053003.jpg'),
+(52, '64', '5ffefd8b0dcf60.55977625.jpg'),
+(53, '65', '5ffefeb20038c0.68076244.jpg'),
+(55, '66', '5ffeff937ef183.62844083.jpg'),
+(57, '66', '5ffeff9380c186.81054195.jpg');
 
 -- --------------------------------------------------------
 
@@ -90,6 +123,13 @@ ALTER TABLE `cars`
   ADD KEY `userID` (`userID`) USING BTREE;
 
 --
+-- Index för tabell `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cars_id` (`car_id`);
+
+--
 -- Index för tabell `users`
 --
 ALTER TABLE `users`
@@ -103,7 +143,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT för tabell `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+
+--
+-- AUTO_INCREMENT för tabell `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT för tabell `users`

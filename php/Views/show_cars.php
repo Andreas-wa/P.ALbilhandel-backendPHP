@@ -111,10 +111,16 @@
             
             // div för bild
             echo "<div class='car_wrapper_image'>";
-            
-            foreach($row_image as $images){
+            if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
+                foreach($row_image as $images){
                 echo "<img src='uploads/" . $images['file_name'] . "'><a href='Includes/delete_image.php?car=" . $car_id . "&file_name=" . $images['file_name'] . "'><i class='fas fa-trash-alt fa-2x'></i></a><br />";
+                }
+            }else{
+                foreach($row_image as $images){
+                    echo "<img src='uploads/" . $images['file_name'] . "'><br />";
+                }
             }
+            
             echo "</div>";
 
             // div för datum
