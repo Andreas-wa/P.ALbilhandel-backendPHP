@@ -13,7 +13,7 @@ $return = $dbh->query($query);
 $row = $return->fetch(PDO::FETCH_ASSOC);
 
 if(empty($row)){
-    header("location:../views/login.php?err=true");
+    header("location: http://localhost/Examensarbete(PALbil)/P.ALbilhandel-backendPHP/php/index.php?page=login&err=true");
 }
     else{
         session_start();

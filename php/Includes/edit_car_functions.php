@@ -100,7 +100,7 @@ if (!$return_update_car) {
     print_r($dbh->errorInfo());
     // annars kommer den att skicka användaren vidare till index.php(start sidan).
 } else {
-    header("location:../index.php?car=" $car_id);
+    header("location:../index.php?car=$car_id");
 }
 
 // $model = $_POST['model'];
