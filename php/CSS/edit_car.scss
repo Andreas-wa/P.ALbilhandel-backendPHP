@@ -1,0 +1,109 @@
+.header_wrapper{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.login-user-text{
+    padding: 10px;
+}
+
+#fa-edit{
+    padding-left: 20px;
+    margin-top: -20px;
+    color: rosybrown;
+}
+
+.writecar_wrapper_form{
+    width: 100%;
+}
+
+.writecar_wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.writecar_wrapper_edit{
+    width: 50%;
+}
+
+// .writecar_wrapper_edit_inputs{
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: row;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     // padding: 20px;
+// }
+
+// .manu_edit{
+//     display: flex;
+//     flex-direction: column;
+//     padding-left: 10px;
+//     padding-right: 10px;
+
+// }
+
+// .model_edit{
+//     display: flex;
+//     flex-direction: column;
+//     padding-left: 10px;
+//     padding-right: 10px;
+// }
+
+// .reg_edit{
+//     display: flex;
+//     flex-direction: column;
+//     padding-left: 10px;
+//     padding-right: 10px;
+// }
+
+// .dist_edit{
+//     display: flex;
+//     flex-direction: column;
+//     padding-left: 10px;
+//     padding-right: 10px;
+// }
+
+// .year_edit{
+//     display: flex;
+//     flex-direction: column;
+//     padding-left: 10px;
+//     padding-right: 10px;
+// }
+
+// .price_edit{
+//     display: flex;
+//     flex-direction: column;
+//     padding-left: 10px;
+//     padding-right: 10px;
+// }
+
+
+
+.cars_edit{
+    width: 15vw;
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.cars_edit_description{
+    border: 1px solid black;
+    border-radius: 1px;
+}
+
+.edit_image{
+    width: 18vw;
+    height: auto;
+    padding: 5px;
+}
+
+.edit_image_div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60vw;
+}

@@ -19,9 +19,11 @@
 <?php
 
     echo "<div class='header_wrapper'>";    
-    
+    echo "</div>";
+
 if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){    
-    echo "<button><a href='index.php?page=writecar'><i class='far fa-edit fa-2x'></i></a></button>";
+    echo "<a href='index.php?page=writecar' id='fa-edit'><i class='far fa-edit fa-3x'></i></a>";
+    
 }
     
 if (!isset($_SESSION['username'])){
@@ -30,11 +32,10 @@ if (!isset($_SESSION['username'])){
     <form method="POST" action="index.php?page=signup">
     <button class ="btn-reg-login" type="submit">Registrera</button>
     </form> -->
-        <div class="nav">
+        <div class="">
             <nav class="navbar">
                 <a href="" class="navbar__link">Meddelanden</a>
                 <a href="" class="navbar__link">Bilar</a>
-        
                 <form method="POST" action="index.php?page=login">
                     <button class ="navbar__link" type="submit">Logga In</button>
                 </form>
@@ -51,20 +52,12 @@ if (!isset($_SESSION['username'])){
 
 <?php
 }
-    ;
-    echo "<div class='header-link-2'>";
-    
-    
-    echo "</div>";
-    ;
-    
-    echo "</div>";
     echo "</div>";
 ?>  
 
     <!--  latest cars  -->
         <div class="content_container">
-            <h2 class="content_container_title">Senaste bilarna:</h2>
+            <!-- <h2 class="content_container_title">Senaste bilarna:</h2> -->
     <?php
         include('Views/show_cars.php');
     ?>

@@ -24,13 +24,23 @@
 
     // skriver ut timodeltel(modeln för caren som har givits), kategori(med "företaget","nyheter" osv)
     // , description(textfält), knapp där man kan sicka in filer i.
-    echo "<h1 class='writecar-h1'> REDIGERA BIL </h1>";
-    echo "<form method='POST' action='Includes/edit_car_functions.php?car=$car_id' enctype='multipart/form-data'>";
+    // echo "<div class='writecar_wrapper'>";
+
+
+    echo "<form method='POST' class='writecar_wrapper_form' action='Includes/edit_car_functions.php?car=$car_id' enctype='multipart/form-data'>";
     echo "<div class='writecar_wrapper'>";
 
+    echo "<h1 class='writecar-h1'> REDIGERA BIL </h1>";
+
+    echo "<div class='writecar_wrapper_edit'>";
+    echo "<a class='signup-backspace-btn' href='index.php'><i class='fas fa-arrow-left fa-3x' aria-hidden='true' id='arrow-left'></i></a>";
+
+    echo "<div class='writecar_wrapper_edit_inputs'>";
+
     // Ändra märket
-    echo "<b> Bilar: </b> <br />";
-    echo "<select name='manufacturers' id='manufacturers value='" . $row_edit_car['manufacturers'] . "' required>";
+    echo '<div class="manu_edit">';
+    echo "<b> Bilar: </b><br />";
+    echo "<select name='manufacturers' class='cars_edit' id='manufacturers value='" . $row_edit_car['manufacturers'] . "' required>";
     echo "<option value='' disabled selected>Välj Kategori</option>";
     echo "<option value='Alfa Romeo'>Alfa Romeo</option>";
     echo "<option value='Audi'>Audi</option>";
@@ -66,54 +76,79 @@
     echo "</select>";
     echo "<br />";
     echo "<br />";
+    echo '</div>';
+
 
     // Ändra model
+    echo '<div class="model_edit">';
     echo "<b>Model:</b><br />";
-    echo "<input type='text' name='model' value='" . $row_edit_car['model'] ."' required><br />";
+    echo "<input type='text' class='cars_edit' name='model' value='" . $row_edit_car['model'] ."' required><br />";
     echo "<br />";
+    echo '</div>';
 
     // regnummer för bilen
+    echo '<div class="reg_edit">';
     echo "<b>Regnummer:</b><br />";
-    echo "<input type='text' name='reg' required><br />";
+    echo "<input type='text' class='cars_edit' name='reg' value='" . $row_edit_car['reg'] ."' required><br />";
     echo "<br />";
+    echo '</div>';
+
 
     // Ändra miltal
+    echo '<div class="dist_edit">';
     echo "<b> Miltal(km):</b> <br/>";
-    echo "<input type='number' name='distance' required><br />";
+    echo "<input type='number' class='cars_edit' name='distance' value='" . $row_edit_car['distance'] ."' required><br />";
     echo "<br />";
+    echo '</div>';
+
 
     // Ändra årsmodell
+    echo '<div class="year_edit">';
     echo "<b> Årsmodell:</b> <br/>";
-    echo "<input type='number' name='year' required><br />";
+    echo "<input type='number' class='cars_edit' name='year' value='" . $row_edit_car['year'] ."' required><br />";
     echo "<br />";
+    echo '</div>';
+
 
     // Ändra årsmodell
+    echo '<div class="price_edit">';
     echo "<b> Pris(kr):</b> <br/>";
-    echo "<input type='number' name='price' required><br />";
+    echo "<input type='number' class='cars_edit' name='price' value='" . $row_edit_car['price'] ."' required><br />";
     echo "<br />";
+    echo '</div>';
+
     
+    echo "</div>";
+
     
     // Ändra beskrivningen
     echo "<b> Beskrivning: </b> <br />";
-    echo "<textarea name='description' cols='60' rows='10' required>" . $row_edit_car['description'] . "</textarea><br />";
+    echo "<textarea name='description' class='cars_edit_description' cols='60' rows='10' required>" . $row_edit_car['description'] . "</textarea><br />";
     echo "<br />";
 
     // Ändra Bilder
     echo "<b>Bifoga bild:</b><br />";
-    echo "<input type='file' name='file[]' id='fileToUpload' multiple><br />";
+    echo "<input type='file'  name='file[]' id='fileToUpload' multiple><br />";
     echo "<br />";
 
+    echo "<div class='edit_image_div'>";
     foreach($row_image as $images){
-        echo "<img src='uploads/" . $images['file_name'] . "'width='300' height='150'><br />";
-    }
-    // echo "<img src='uploads/" . $row_image['file_name'] . "'><br />";
+        // echo "<img src='uploads/" . $images['file_name'] . "' class='edit_image'><br />";
+        echo "<img src='uploads/" . $images['file_name'] . "'class='edit_image'><a href='Includes/delete_image.php?car=" . $car_id . "&file_name=" . $images['file_name'] . "'><i class='fas fa-times fa-2x' id='pen_times'></i></a><br />";
 
+    }
+
+    // echo "<img src='uploads/" . $row_image['file_name'] . "'><br />";
+    echo "</div>";
+
+    
     echo "<br />";
 
     echo "<input type='submit' name='submit' value='Publicera' />";
     echo "</div>";
     echo "</form>";
-    echo "<a class='signup-backspace-btn' href='index.php'><i class='fas fa-backspace fa-3x' aria-hidden='true'></i></a>";
+
+    echo "</div>";
 
     }
     // annars kommer ett fel medelande att vissas.

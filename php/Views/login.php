@@ -5,17 +5,19 @@ echo (isset($_GET['err']) && $_GET['err'] == true ? "Något gick fel! Försök I
 
 <form method="POST" action="Includes/login_functions.php">
 
+<h1 class="login_title">Logga in</h1>
 <div class="login_container">
-<b>Användarnamn:</b><br />
-<input type="text" name="username" placeholder="Användarnamn" required><br />
-<b>Lösenord:</b><br />
-<input type="password" name="password" placeholder="Lösenord" required><br />
+<!-- <b>Användarnamn:</b><br /> -->
+<input type="text" name="username" class="login_username" placeholder="Användarnamn" required><br />
+<!-- <b>Lösenord:</b><br /> -->
+<input type="password" name="password" class="login_password" placeholder="Lösenord" required><br />
 <br />
-<input class="login-btn" type="submit" name="login" value="Logga in">
+<input class="login_btn" type="submit" name="login" value="Logga in">
 <br>
-</form>
 </div>
-<a href="index.php"><i class="fas fa-backspace fa-3x"></i></a>
+</form>
+
+<!-- <a href="index.php"><i class="fas fa-backspace fa-3x"></i></a> -->
 
 
 <?php 

@@ -3,6 +3,8 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding-top: 4rem;
 }
 
 .content_container_title{
@@ -11,60 +13,36 @@
 }
 
 .content_container img{
-    width: 20vw;
-    height: 20vh;
-    // display: none;
+    width: 18vw;
+    height: 18vh;
+    padding: 5px;
+    object-fit: cover;
 }
 
-// .home_car{
-//     display: flex;
-//     flex-wrap: wrap;
-//     width: auto;
-//     height: auto;
-//     justify-content: center;
-//     flex-direction: column;
-//     align-items: center;
-//     padding: 5px;
-//     margin: 5px;
-//     border: 1px solid grey;
-//     border-radius: 5px;
-// }
+#arrow-left{
+    float: left;
+    margin-left: -100px;
+    margin-top: 2px;
+    padding: 10px;
+    color: grey;
+}
 
-// .home_car a{
-//     text-decoration: none;
-//     color: black;
-// }
+#pen_times{
+    margin-left: -30px;
+    margin-top: 2px;
+    color: rosybrown;
+}
 
-// .home_car_info{
-//     display: flex;
-//     justify-content: space-between;
-//     flex-direction: row;
-//     width: 60vw;
-    
-// }
+#big_pen_icon{
+    padding: 20px;
+    color: grey;
+}
 
-// .home_car_title{
-//     font-size: larger;
-// }
+#big_trash_icon{
+    padding: 20px;
+    color: grey;
+}
 
-// .home_car_year{
-//     padding: 5px;
-//     margin: 5px;
-// }
-
-// .home_car_distance{
-//     padding: 5px;
-//     margin: 5px;
-// }
-// .home_car_price{
-//     padding: 5px;
-//     margin: 5px;
-// }
-
-// .home_car_date{
-//     padding: 5px;
-//     margin: 5px;
-// }
 
 
 h1 {

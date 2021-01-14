@@ -6,10 +6,15 @@
 
     echo "<h1 class='writecar-h1'>Lägg till bil</h1>";
     echo "<div class='writecar_wrapper'>";
+    
     echo "<form method='POST' action='Includes/writecar_functions.php' enctype='multipart/form-data'>";
     echo "<div class='writecar-input_container'>";
+    echo "<a class='signup-backspace-btn' href='index.php'><i class='fas fa-arrow-left fa-3x' aria-hidden='true' id='arrow-left'></i></a>";
+
+    echo "<div class='writecar_wrapper_inputs'>";
 
     // rullgardin med bilmärken
+    echo '<div class="manu_write">';
     echo "<b> Bilmärken: </b> <br />";
     echo "<select name='manufacturers' id='manufacturers' required>";
     echo "<option value='' disabled selected>Välj bil märke</option>";
@@ -47,31 +52,48 @@
     echo "</select>";
     echo "<br />";
     echo "<br />";
+    echo '</div>';
+
 
     // Model för bilen
+    echo '<div class="model_write">';
     echo "<b>Model:</b><br />";
     echo "<input type='text' name='model' required><br />";
     echo "<br />";
+    echo '</div>';
+
 
     // regnummer för bilen
+    echo '<div class="reg_write">';
     echo "<b>Regnummer:</b><br />";
     echo "<input type='text' name='reg' required><br />";
     echo "<br />";
+    echo '</div>';
+
 
     // miltal
+    echo '<div class="dist_write">';
     echo "<b> Miltal(km):</b> <br/>";
     echo "<input type='number' name='distance' required><br />";
     echo "<br />";
+    echo '</div>';
+
 
     // årsmodell
+    echo '<div class="year_write">';
     echo "<b> Årsmodell:</b> <br/>";
     echo "<input type='number' name='year' required><br />";
     echo "<br />";
+    echo '</div>';
+
 
     // pris
+    echo '<div class="price_write">';
     echo "<b> Pris(kr):</b> <br/>";
     echo "<input type='number' name='price' required><br />";
     echo "<br />";
+    echo '</div>';
+
 
     // beskrivningen
     echo "<b> Beskrivning: </b> <br />";
@@ -80,7 +102,7 @@
 
     // bilder
     echo "<b>Bifoga bild:</b><br />";
-    echo "<input type='file' name='file[]' id='fileToUpload' multiple><br />";
+    echo "<input type='file' name='file[]' id='fileToUpload' multiple required><br />";
     echo "<br />";
     
     // publicera knapp
@@ -90,7 +112,6 @@
     echo "</form>";
     echo "</div>";
 
-    echo "<a class='signup-backspace-btn' href='index.php'><i class='fas fa-backspace fa-3x' aria-hidden='true'></i></a>";
 }
 
 else{

@@ -1,4 +1,26 @@
 .car_wrapper{
-    width: auto;
-    // background-color: aqua;
+    width: 60vw;
 }
+.car_wrapper_image{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: fit-content;
+}
+
+.car_wrapper_info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.1rem;
+}
+
+.car_wrapper_footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+

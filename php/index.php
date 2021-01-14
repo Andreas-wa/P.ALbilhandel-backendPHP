@@ -6,6 +6,9 @@
     <title>P.ALbilhandel</title>
     <link rel="stylesheet" href="CSS/index.scss">
     <link rel="stylesheet" href="CSS/navbar.scss">
+    <link rel="stylesheet" href="CSS/login.scss">
+    <link rel="stylesheet" href="CSS/edit_car.scss">
+    <link rel="stylesheet" href="CSS/write_car.scss">
     <link rel="stylesheet" href="CSS/tableCars.scss">
     <link rel="stylesheet" href="CSS/car.scss">
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">
