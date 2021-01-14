@@ -20,11 +20,6 @@
 
     echo "<div class='header_wrapper'>";    
     echo "</div>";
-
-if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){    
-    echo "<a href='index.php?page=writecar' id='fa-edit'><i class='far fa-edit fa-3x'></i></a>";
-    
-}
     
 if (!isset($_SESSION['username'])){
 ?>

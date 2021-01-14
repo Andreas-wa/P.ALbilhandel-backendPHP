@@ -16,7 +16,7 @@
     // rullgardin med bilmärken
     echo '<div class="manu_write">';
     echo "<b> Bilmärken: </b> <br />";
-    echo "<select name='manufacturers' id='manufacturers' required>";
+    echo "<select name='manufacturers' class='cars_write' id='manufacturers' required>";
     echo "<option value='' disabled selected>Välj bil märke</option>";
     echo "<option value='Alfa Romeo'>Alfa Romeo</option>";
     echo "<option value='Audi'>Audi</option>";
@@ -58,7 +58,7 @@
     // Model för bilen
     echo '<div class="model_write">';
     echo "<b>Model:</b><br />";
-    echo "<input type='text' name='model' required><br />";
+    echo "<input type='text' class='cars_write' name='model' required><br />";
     echo "<br />";
     echo '</div>';
 
@@ -66,7 +66,7 @@
     // regnummer för bilen
     echo '<div class="reg_write">';
     echo "<b>Regnummer:</b><br />";
-    echo "<input type='text' name='reg' required><br />";
+    echo "<input type='text' class='cars_write' name='reg' required><br />";
     echo "<br />";
     echo '</div>';
 
@@ -74,7 +74,7 @@
     // miltal
     echo '<div class="dist_write">';
     echo "<b> Miltal(km):</b> <br/>";
-    echo "<input type='number' name='distance' required><br />";
+    echo "<input type='number' class='cars_write' name='distance' required><br />";
     echo "<br />";
     echo '</div>';
 
@@ -82,7 +82,7 @@
     // årsmodell
     echo '<div class="year_write">';
     echo "<b> Årsmodell:</b> <br/>";
-    echo "<input type='number' name='year' required><br />";
+    echo "<input type='number' class='cars_write' name='year' required><br />";
     echo "<br />";
     echo '</div>';
 
@@ -90,14 +90,14 @@
     // pris
     echo '<div class="price_write">';
     echo "<b> Pris(kr):</b> <br/>";
-    echo "<input type='number' name='price' required><br />";
+    echo "<input type='number' class='cars_write' name='price' required><br />";
     echo "<br />";
     echo '</div>';
 
 
     // beskrivningen
     echo "<b> Beskrivning: </b> <br />";
-    echo "<textarea name='description' cols='60' rows='10' placeholder='Skriv ditt inlägg här..' required></textarea><br />";
+    echo "<textarea name='description' class='cars_write_description' cols='60' rows='10' placeholder='Skriv ditt inlägg här..' required></textarea><br />";
     echo "<br />";
 
     // bilder
@@ -106,7 +106,7 @@
     echo "<br />";
     
     // publicera knapp
-    echo "<input type='submit' name='submit' value='Publicera' />";
+    echo "<input type='submit' name='submit' class='publish-btn' value='Publicera' />";
     echo "<br />";
     echo "</div>";
     echo "</form>";

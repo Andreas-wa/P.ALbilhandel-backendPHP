@@ -130,10 +130,15 @@
     if(isset($_GET['car']) == true){
 
     while($row = $rows_cars->fetch(PDO::FETCH_ASSOC)){
+        
  
         }     
     } else {
-                    // echo "<div class='tbl'>";
+
+            // echo "<div class='tbl'>";
+            if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
+                echo "<a href='index.php?page=writecar' id='fa-edit'><i class='far fa-edit fa-3x'></i></a>";
+            }
 
 
         echo '<table>';

@@ -144,7 +144,7 @@
     
     echo "<br />";
 
-    echo "<input type='submit' name='submit' value='Publicera' />";
+    echo "<input type='submit' name='submit' class='publish-btn' value='Publicera' />";
     echo "</div>";
     echo "</form>";
 
