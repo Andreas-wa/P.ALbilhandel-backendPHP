@@ -70,8 +70,7 @@
                         year,
                         distance,
                         price,
-                        description,
-                        -- file_name
+                        description
                       FROM
                         ". $this->db_table . " 
                     WHERE 
@@ -87,9 +86,9 @@
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
             
             $this->id = $dataRow['id'];
-            $this->model = $dataRow['model'];
             $this->reg = $dataRow['reg'];
             $this->manufacturers = $dataRow['manufacturers'];
+            $this->model = $dataRow['model'];
             $this->year = $dataRow['year'];
             $this->distance = $dataRow['distance'];
             $this->price = $dataRow['price'];
