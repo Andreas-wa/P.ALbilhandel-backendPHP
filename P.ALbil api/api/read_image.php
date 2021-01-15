@@ -8,10 +8,11 @@
     $database = new Database();
     $db = $database->getConnection();
 
-    $items = new cars($db);
+    $items_images = new cars($db);
 
-    $stmt = $items->getcars();
-    $itemCount = $stmt->rowCount();
+    $stmt_images = $items_images->getcars_images();
+    $itemCount = $stmt_images->rowCount();
+
 
     echo json_encode($itemCount);
 
@@ -21,17 +22,12 @@
         $carArr["body"] = array();
         $carArr["itemCount"] = $itemCount;
 
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        while ($row = $stmt_images->fetch(PDO::FETCH_ASSOC)){
             extract($row);
             $e = array(
                 "id" => $id,
-                "manufacturers" => $manufacturers,
-                "model" => $model,
-                "reg" => $reg,
-                "year" => $year,
-                "distance" => $distance,
-                "price" => $price,
-                "description" => $description,
+                "car_id" => $car_id,
+                "file_name" => $file_name,
             );
 
             array_push($carArr["body"], $e);

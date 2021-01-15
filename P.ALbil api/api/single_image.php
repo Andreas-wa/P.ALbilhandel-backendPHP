@@ -13,21 +13,16 @@
 
     $item = new cars($db);
 
-    $item->id = isset($_GET['id']) ? $_GET['id'] : die();
+    $item->car_id = isset($_GET['car_id']) ? $_GET['car_id'] : die();
   
-    $item->getSinglecar();
+    $item->getSinglecarImage();
 
-    if($item->model != null){
+    if($item->car_id != null){
         // create array
         $car_arr = array(
             "id" =>  $item->id,
-            "manufacturers" => $item->manufacturers,
-            "model" => $item->model,
-            "reg" => $item->reg,
-            "year" => $item->year,
-            "distance" => $item->distance,
-            "price" => $item->price,
-            "description" => $item->description,
+            "car_id" => $item->car_id,
+            "file_name" => $item->file_name,
         );
       
         http_response_code(200);
