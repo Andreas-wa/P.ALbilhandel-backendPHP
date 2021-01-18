@@ -24,24 +24,24 @@
     // // print_r(json_encode($data));
 
 
-    $connect = mysqli_connect("localhost", "root", "", "pal-bil");
-    $response = array();
-    if($connect){
-        $sql = "SELECT * FROM cars";
-        $result = mysqli_query($connect, $sql);
-        if($result){
-            header("Content-Type: JSON");
-            $i=0;
-            while($row = mysqli_fetch_assoc($result)){
-                $response[$i]['id'] = $row ['id'];
-                $response[$i]['title'] = $row ['title'];
-                $response[$i]['year'] = $row ['year'];
-                $i++;
-            } 
-            echo json_encode($response,JSON_PRETTY_PRINT);
-        }
-    }
-    else{
-        echo "fuck!";
-    }
+    // $connect = mysqli_connect("localhost", "root", "", "pal-bil");
+    // $response = array();
+    // if($connect){
+    //     $sql = "SELECT * FROM cars";
+    //     $result = mysqli_query($connect, $sql);
+    //     if($result){
+    //         header("Content-Type: JSON");
+    //         $i=0;
+    //         while($row = mysqli_fetch_assoc($result)){
+    //             $response[$i]['id'] = $row ['id'];
+    //             $response[$i]['title'] = $row ['title'];
+    //             $response[$i]['year'] = $row ['year'];
+    //             $i++;
+    //         } 
+    //         echo json_encode($response,JSON_PRETTY_PRINT);
+    //     }
+    // }
+    // else{
+    //     echo "fuck!";
+    // }
 ?>

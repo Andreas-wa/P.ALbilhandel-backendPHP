@@ -17,14 +17,6 @@
 </head>
 <body>
 
-    <!-- <div>
-      <nav class="navbar">
-        <a href="" class="navbar__link">Meddelanden</a>
-        <a href="" class="navbar__link">Bilar</a>
-          <!-- <a href="" class="navbar__link">Meddelanden</a> -->
-      <!-- </nav> -->
-    <!-- </div> -->
-
 <?php
 include('Includes/database_connections.php');
 
@@ -50,15 +42,11 @@ if($page == "home"){
     include("Views/home.php");
 }
 
-// if($page == "home"){
-//     include("Views/upload.php");
-// }
-
 if($page == "writecar"){
     include("Views/writecar.php");
 }
 
-echo (isset($_GET['login']) && $_GET['login'] == true ? "<center><a href='Includes/logout_functions.php'>Logga Ut</a></center>" : "");
+echo (isset($_GET['login']) && $_GET['login'] == true ? "<center><a href='Includes/logout_functions.php' id='logout_btn'>Logga Ut</a></center>" : "");
 
 
 ?>

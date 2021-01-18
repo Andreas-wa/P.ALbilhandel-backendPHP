@@ -27,7 +27,7 @@
             $e = array(
                 "id" => $id,
                 "car_id" => $car_id,
-                "file_name" => $file_name,
+                "file_name" => $file_name
             );
 
             array_push($carArr["body"], $e);

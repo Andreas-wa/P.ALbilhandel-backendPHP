@@ -27,7 +27,6 @@ session_start();
     $sth_writecar->bindParam(':year', $year);
     $sth_writecar->bindParam(':price', $price);
     $sth_writecar->bindParam(':description', $description);
-    // $sth_writecar->bindParam(':file_new_name', $file_new_name);
     $return = $sth_writecar->execute();
     
     $carId = $dbh->lastInsertId();
@@ -41,9 +40,6 @@ session_start();
             $file_name = $_FILES['file']['name'][$i];
             
     // post variabler för writepost
-    
-    // files variabler för file/img.
-    // $file_name = $_FILES['file']['name'];
     $file_tmp_name = $_FILES['file']['tmp_name'][$i];
     $file_size = $_FILES['file']['size'][$i];
     $file_error = $_FILES['file']['error'][$i];
@@ -94,21 +90,4 @@ if (!$return) {
 } else {
     header("location:../index.php?page=home");
 }
-
-
-// if ($dbh->query($query_car) === TRUE) {
-//     $last_id = $conn->insert_id;
-//     print_r( $last_id);
-//   } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-//   }
-
-   
-
-    // if ($dbh->query($query_car) === TRUE) {
-//     $last_id = $dbh->insert_id;
-//     $car_id = $last_id;
-//   } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-//   }
 ?>

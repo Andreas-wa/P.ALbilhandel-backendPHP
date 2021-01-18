@@ -18,14 +18,6 @@
     $sth_update_car->bindParam(':car_id', $car_id);
     $row_image = $return_image->fetchAll(PDO::FETCH_ASSOC);
 
-    // $image_id = $row_image["images.id"];
-
-    // print_r($return_image);
-
-    // skriver ut timodeltel(modeln för caren som har givits), kategori(med "företaget","nyheter" osv)
-    // , description(textfält), knapp där man kan sicka in filer i.
-    // echo "<div class='writecar_wrapper'>";
-
 
     echo "<form method='POST' class='writecar_wrapper_form' action='Includes/edit_car_functions.php?car=$car_id' enctype='multipart/form-data'>";
     echo "<div class='writecar_wrapper'>";
@@ -133,12 +125,10 @@
 
     echo "<div class='edit_image_div'>";
     foreach($row_image as $images){
-        // echo "<img src='uploads/" . $images['file_name'] . "' class='edit_image'><br />";
         echo "<img src='uploads/" . $images['file_name'] . "'class='edit_image'><a href='Includes/delete_image.php?car=" . $car_id . "&file_name=" . $images['file_name'] . "'><i class='fas fa-times fa-2x' id='pen_times'></i></a><br />";
 
     }
 
-    // echo "<img src='uploads/" . $row_image['file_name'] . "'><br />";
     echo "</div>";
 
     

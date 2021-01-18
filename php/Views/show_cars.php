@@ -13,7 +13,6 @@
         $return_username = $dbh->query($query_username);
         $row_username = $return_username->fetch(PDO::FETCH_ASSOC);
 
-        // $image_id = $_GET['car'];
         $query_image = "SELECT images.file_name FROM images JOIN cars ON cars.id = images.car_id WHERE cars.id = $car_id";
         $return_image = $dbh->query($query_image);
         $row_image = $return_image->fetchAll(PDO::FETCH_ASSOC);
@@ -134,8 +133,6 @@
  
         }     
     } else {
-
-            // echo "<div class='tbl'>";
             if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
                 echo "<a href='index.php?page=writecar' id='fa-edit'><i class='far fa-edit fa-3x'></i></a>";
             }
@@ -181,7 +178,6 @@
                 echo "<td><a href='index.php?page=editcar&car=" . $row["id"] . "'><i class='fas fa-pen fa-2x'></i></a><td>";
                 echo "<td><a href='Includes/delete_car.php?car=" . $row["id"] . "'><i class='fas fa-trash-alt fa-2x'></i></a></td>";
             }
-            // echo '<th><i class="fas fa-eye fa-2x"></a></th>';
             echo "</tr>";
             echo "</tbody>";
             echo "</div>";
@@ -189,8 +185,6 @@
             echo '</a>';
 
 
-
-            //echo "</center>";
         
     }
 }

@@ -33,16 +33,15 @@
             return $stmt_image;
         }
 
-
         public function getSingleCarImage(){
             $sql_image = "SELECT
                         id, 
                         car_id,
                         file_name
                       FROM
-                      " . $this->db_images ."
+                      images
                     WHERE 
-                       car_id = ?
+                       car_id = 73
                     ";
 
             $stmt_image = $this->conn->prepare($sql_image);
@@ -51,14 +50,15 @@
 
             $stmt_image->execute();
 
-            $dataRow = $stmt_image->fetch(PDO::FETCH_ASSOC);
-            
-            $this->id = $dataRow['id'];
-            $this->car_id = $dataRow['car_id'];
-            $this->file_name = $dataRow['file_name'];
+            $dataRow = $stmt_image->fetchAll(PDO::FETCH_ASSOC);
 
+            foreach($dataRow as $row){
+            $this->id = $row['id'];
+            $this->car_id = $row['car_id'];
+            $this->file_name = $row['file_name'];
+            }
+            print_r($dataRow);
         }
-
         
         // READ single
         public function getSinglecar(){
@@ -72,7 +72,7 @@
                         price,
                         description
                       FROM
-                        ". $this->db_table . " 
+                        ". $this->db_table . "
                     WHERE 
                        id = ?
                     LIMIT 0,1";
@@ -93,7 +93,6 @@
             $this->distance = $dataRow['distance'];
             $this->price = $dataRow['price'];
             $this->description = $dataRow['description'];
-
         }                
     }
 ?>
