@@ -19,6 +19,7 @@
                 echo "Database could not be connected: " . $exception->getMessage();
             }
             return $this->conn;
+            
         }
     }  
 ?>
