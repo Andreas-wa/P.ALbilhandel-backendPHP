@@ -39,9 +39,9 @@
                         car_id,
                         file_name
                       FROM
-                      images
+                      " . $this->db_images . "
                     WHERE 
-                       car_id = 73
+                       car_id = ?
                     ";
 
             $stmt_image = $this->conn->prepare($sql_image);
