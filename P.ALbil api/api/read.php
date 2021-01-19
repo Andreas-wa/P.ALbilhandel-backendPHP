@@ -35,6 +35,7 @@
             );
 
             array_push($carArr["cars"], $e);
+            
         }
         echo json_encode($carArr, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
     }
