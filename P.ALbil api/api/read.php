@@ -13,13 +13,11 @@
     $stmt = $items->getcars();
     $itemCount = $stmt->rowCount();
 
-    // echo json_encode($itemCount);
 
     if($itemCount > 0){
         
         $carArr = array();
         $carArr["cars"] = array();
-        // $carArr["itemCount"] = $itemCount;
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             extract($row);
@@ -35,7 +33,7 @@
             );
 
             array_push($carArr["cars"], $e);
-            
+
         }
         echo json_encode($carArr, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
     }
