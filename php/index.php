@@ -26,6 +26,7 @@ if($page == "login"){
     include("Views/login.php");
 }
 
+
 if(!$page){
     include("Views/home.php");
 }

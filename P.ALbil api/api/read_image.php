@@ -14,13 +14,13 @@
     $itemCount = $stmt_images->rowCount();
 
 
-    echo json_encode($itemCount);
+    // echo json_encode($itemCount);
 
     if($itemCount > 0){
         
         $carArr = array();
-        $carArr["body"] = array();
-        $carArr["itemCount"] = $itemCount;
+        $carArr["cars"] = array();
+        // $carArr["itemCount"] = $itemCount;
 
         while ($row = $stmt_images->fetch(PDO::FETCH_ASSOC)){
             extract($row);
@@ -30,9 +30,9 @@
                 "file_name" => $file_name
             );
 
-            array_push($carArr["body"], $e);
+            array_push($carArr["cars"], $e);
         }
-        echo json_encode($carArr, JSON_UNESCAPED_UNICODE);
+        echo json_encode($carArr, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
     }
 
     else{
