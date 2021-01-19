@@ -13,13 +13,13 @@
     $stmt = $items->getcars();
     $itemCount = $stmt->rowCount();
 
-    echo json_encode($itemCount);
+    // echo json_encode($itemCount);
 
     if($itemCount > 0){
         
         $carArr = array();
-        $carArr["body"] = array();
-        $carArr["itemCount"] = $itemCount;
+        $carArr["cars"] = array();
+        // $carArr["itemCount"] = $itemCount;
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             extract($row);
@@ -34,16 +34,16 @@
                 "description" => $description,
             );
 
-            array_push($carArr["body"], $e);
+            array_push($carArr["cars"], $e);
         }
-        echo json_encode($carArr, JSON_UNESCAPED_UNICODE);
+        echo json_encode($carArr, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
     }
 
     else{
         http_response_code(404);
         echo json_encode(
             array("message" => "No record found.")
-            
+
         );
     }
 ?>
