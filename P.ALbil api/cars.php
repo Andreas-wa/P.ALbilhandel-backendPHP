@@ -18,7 +18,7 @@
             $this->conn = $db;
         }
 
-        // GET ALL
+        // hämtar alla bilar
         public function getcars(){
             $sqlQuery = "SELECT id, reg, manufacturers, model, year, distance, price, description FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
@@ -26,6 +26,7 @@
             return $stmt;
         }
 
+        // hämtar alla bild
         public function getcars_images(){
             $sql_image = 'SELECT id, car_id, file_name FROM ' . $this->db_images . '';
             $stmt_image = $this->conn->prepare($sql_image);
@@ -33,6 +34,16 @@
             return $stmt_image;
         }
 
+        // för att hämta alla bilder från en specefik id
+        public function images($car_id){
+            $sql_image = "SELECT id, car_id, file_name FROM images WHERE car_id = :car_id";
+            $stmt_image = $this->conn->prepare($sql_image);
+            $stmt_image->bindparam(":car_id", $car_id);
+            $stmt_image->execute();
+            return $stmt_image;
+        }
+
+        // hämtar en bild på en specefik bil
         public function getSingleCarImage(){
             $sql_image = "SELECT
                         id, 
@@ -57,10 +68,9 @@
             $this->car_id = $row['car_id'];
             $this->file_name = $row['file_name'];
             }
-            print_r($dataRow);
         }
         
-        // READ single
+        // hämtar en bil
         public function getSinglecar(){
             $sqlQuery = "SELECT
                         id, 
@@ -93,6 +103,6 @@
             $this->distance = $dataRow['distance'];
             $this->price = $dataRow['price'];
             $this->description = $dataRow['description'];
-        }                
+        }
     }
 ?>

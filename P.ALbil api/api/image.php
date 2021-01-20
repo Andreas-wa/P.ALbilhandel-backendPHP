@@ -1,26 +1,27 @@
 <?php
-    header("Access-Control-Allow-Origin: *");
-    header("Content-Type: application/json; charset=UTF-8");
-    
-    include_once 'database.php';
-    include_once '../cars.php';
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-    $database = new Database();
-    $db = $database->getConnection();
+include_once 'database.php';
+include_once '../cars.php';
 
-    $items_images = new cars($db);
+$database = new Database();
+$db = $database->getConnection();
 
-    $stmt_images = $items_images->getcars_images();
+$items_images = new cars($db);
+$car_id = $_GET['car_id'];
+
+
+    $stmt_images = $items_images->images($car_id);
     $itemCount = $stmt_images->rowCount();
-
-
-    // echo json_encode($itemCount);
 
     if($itemCount > 0){
         
         $carArr = array();
         $carArr["image"] = array();
-        // $carArr["itemCount"] = $itemCount;
 
         while ($row = $stmt_images->fetch(PDO::FETCH_ASSOC)){
             extract($row);

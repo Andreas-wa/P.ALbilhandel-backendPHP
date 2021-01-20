@@ -15,9 +15,7 @@
 
     $item->car_id = isset($_GET['car_id']) ? $_GET['car_id'] : die();
   
-    $item->getSinglecarImage();
-
-    // print_r($item->getSingleCarImage());
+    $item->getSingleCarImage();
 
     if($item->car_id != null){
         // create array
@@ -26,7 +24,6 @@
             "car_id" => $item->car_id,
             "file_name" => $item->file_name,
         );
-        
         
         http_response_code(200);
         echo json_encode($car_arr, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
