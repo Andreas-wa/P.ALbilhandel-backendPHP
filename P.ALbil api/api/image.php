@@ -18,6 +18,7 @@ $car_id = $_GET['car_id'];
     $stmt_images = $items_images->images($car_id);
     $itemCount = $stmt_images->rowCount();
 
+    
     if($itemCount > 0){
         
         $carArr = array();
