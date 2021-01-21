@@ -126,7 +126,6 @@
     echo "<div class='edit_image_div'>";
     foreach($row_image as $images){
         echo "<img src='uploads/" . $images['file_name'] . "'class='edit_image'><a href='Includes/delete_image.php?car=" . $car_id . "&file_name=" . $images['file_name'] . "'><i class='fas fa-times fa-2x' id='pen_times'></i></a><br />";
-
     }
 
     echo "</div>";

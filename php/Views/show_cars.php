@@ -26,11 +26,9 @@
             // div för car data
             echo "<div class='car_wrapper_info'>";
             
-            
 
             echo "<br />";
 
-           
             // div för tillverkaren
             echo "<div class='car_wrapper_manufacturers'>";
             echo "<b>Märke: </b>" . $row['manufacturers'] . "<br />";

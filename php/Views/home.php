@@ -11,8 +11,10 @@
 
 <nav class="navbar">
                 <img src="logoTransp.png" class="pal-logo" alt="logo for the company" srcset="">
-                <a href="" class="navbar__link">Meddelanden</a>
+                <!-- <div class=""> -->
+                <a href="../../frontendnew/public/index.html" class="navbar__link">Meddelanden</a>
                 <a href="" class="navbar__link">Bilar</a>
+                <!-- </div> -->
           <?php
     session_start();
     echo "<div class='login-user-text'>";

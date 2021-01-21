@@ -27,12 +27,14 @@
             $e = array(
                 "id" => $id,
                 "car_id" => $car_id,
-                "file_name" => $file_name
+                "file_name" => 'http://localhost/Examensarbete(PALbil)/P.ALbilhandel-backendPHP/php/uploads/'. $file_name .''
             );
 
             array_push($carArr["image"], $e);
         }
         echo json_encode($carArr, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+        // echo '<img src="http://localhost/Examensarbete(PALbil)/P.ALbilhandel-backendPHP/php/uploads/'. $file_name .' >';
+
     }
 
     else{
