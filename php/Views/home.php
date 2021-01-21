@@ -12,7 +12,7 @@
 <nav class="navbar">
                 <img src="logoTransp.png" class="pal-logo" alt="logo for the company" srcset="">
                 <!-- <div class=""> -->
-                <a href="../../frontendnew/public/index.html" class="navbar__link">Meddelanden</a>
+                <a href="http://localhost:3000/admin/messages" class="navbar__link">Meddelanden</a>
                 <a href="" class="navbar__link">Bilar</a>
                 <!-- </div> -->
           <?php
