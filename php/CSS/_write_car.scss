@@ -12,6 +12,7 @@
 
 .writecar-input_container{
     width: 50%;
+    height: 100vh;
 }
 
 .cars_write{
@@ -34,6 +35,33 @@
         background-color: grey;
         color: white;
         font-weight: bold;
+}
+
+@media screen and (max-width: 750px) {
+
+    .writecar_wrapper{
+        width: auto;
+
+        .writecar_wrapper_inputs{
+            width: 90vw;
+            padding-left: 5%;
+            
+        }
+        .cars_write{
+            width: 80%;
+            
+            
+        }
+
+        .manu_write{
+                width: 60%;
+            }
+
+        .cars_write_description{
+            width: 80%;
+        }
+    }
+
 }
 
 // .writecar_wrapper_inputs{

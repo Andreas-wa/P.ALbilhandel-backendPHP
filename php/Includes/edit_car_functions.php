@@ -69,7 +69,7 @@
                 }
              
                 if (empty($_FILES['file']['name'])){
-                $file_name = "";
+                echo $file_name = "";
                 }
      
                 $query_image = "INSERT INTO images(car_id, file_name) VALUES (:car_id, :file_name)";

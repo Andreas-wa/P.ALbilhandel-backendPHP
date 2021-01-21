@@ -107,3 +107,45 @@
     flex-wrap: wrap;
     width: 60vw;
 }
+
+#arrow-left{
+    float: left;
+    margin-left: -100px;
+    margin-top: 2px;
+    padding: 10px;
+    color: grey;
+}
+
+
+@media screen and (max-width: 750px) {
+
+
+    .writecar_wrapper_edit{
+        width: 90%;
+    }
+
+    .cars_edit{
+        width: 60%;
+    }
+
+    .cars_edit_description{
+        width: 90%;
+    }
+
+    .edit_image_div{
+        width: 100%;
+    }
+
+    .edit_image{
+        width: 90%;
+    }
+
+    .publish-btn{
+        margin-bottom: 34%;
+    }
+
+    #arrow-left{
+        display: none;
+    }
+
+}

@@ -7,26 +7,21 @@
     <title>P.ALbilhandel</title>
 </head>
 <body>
-    
 
 <nav class="navbar">
                 <img src="logoTransp.png" class="pal-logo" alt="logo for the company" srcset="">
-                <!-- <div class=""> -->
                 <a href="http://localhost:3000/admin/messages" class="navbar__link">Meddelanden</a>
                 <a href="" class="navbar__link">Bilar</a>
-                <!-- </div> -->
-          <?php
+
+<?php
     session_start();
     echo "<div class='login-user-text'>";
     echo (isset($_SESSION['username']) ? " Inloggad som: " . $_SESSION['username'] : '');
     echo (isset($_SESSION['username']) ? "<button class='logout-btn'><a href='Includes/logout_functions.php'>Logga Ut</a></button>" : "");
     echo "</div>";
-    ?>      
-<?php
+    ?>
 
-    
-if (!isset($_SESSION['username'])){
-?>
+<?php if (!isset($_SESSION['username'])){ ?>
             <nav class="navbar_admin">
                 
                 <form method="POST" action="index.php?page=login">
