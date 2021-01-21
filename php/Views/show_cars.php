@@ -90,8 +90,6 @@
 
             
             echo "<br />";
-
-
             
             // div för bild
             echo "<div class='car_wrapper_image'>";

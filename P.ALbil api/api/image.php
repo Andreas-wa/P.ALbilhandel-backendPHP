@@ -9,16 +9,14 @@ include_once 'database.php';
 include_once '../cars.php';
 
 $database = new Database();
-$db = $database->getConnection();
+    $db = $database->getConnection();
 
-$items_images = new cars($db);
-$car_id = $_GET['car_id'];
-
+    $items_images = new cars($db);
+    $car_id = $_GET['car_id'];
 
     $stmt_images = $items_images->images($car_id);
     $itemCount = $stmt_images->rowCount();
 
-    
     if($itemCount > 0){
         
         $carArr = array();
@@ -35,7 +33,9 @@ $car_id = $_GET['car_id'];
             array_push($carArr["image"], $e);
         }
         echo json_encode($carArr, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-    }
+
+        }
+
 
     else{
         http_response_code(404);
