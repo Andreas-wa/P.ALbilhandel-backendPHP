@@ -18,7 +18,6 @@
         $row_image = $return_image->fetchAll(PDO::FETCH_ASSOC);
 
 
-
             // class för all data  
             echo "<div class='car_wrapper'>";
             echo '<a href="index.php"><i class="fas fa-arrow-left fa-3x" id="arrow-left"></i></a>';
@@ -182,10 +181,8 @@
             echo "</div>";
 
             echo '</a>';
-
-
         
     }
 }
 
-    ?>
+?>

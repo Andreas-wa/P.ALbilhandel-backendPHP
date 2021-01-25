@@ -28,7 +28,7 @@
 .writecar_wrapper_edit #pen_times {
   margin-left: -30px;
   margin-top: 2px;
-  color: rosybrown;
+  color: grey;
 }
 
 .writecar_wrapper_edit .cars_edit {
@@ -192,7 +192,7 @@
   border: 1px solid grey;
   border-radius: 2px;
   background-color: grey;
-  color: white;
+  color: grey;
   font-weight: bold;
 }
 
@@ -216,7 +216,7 @@
   border: 1px solid grey;
   border-radius: 2px;
   background-color: grey;
-  color: white;
+  color: grey;
   font-size: 13px;
   font-weight: bold;
 }

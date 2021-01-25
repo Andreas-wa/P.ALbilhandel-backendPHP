@@ -28,8 +28,6 @@
 
     <a class="signup-backspace-btn" href="index.php"><i class="fas fa-backspace fa-3x"></i></a>
 </div>
-   
-
     
 </body>
 </html>

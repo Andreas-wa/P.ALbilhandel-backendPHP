@@ -76,16 +76,6 @@
       }
 }
 
-
-  
-// .tbl {
-//     // overflow-x: auto;
-// }
-
-
-
-
-
     @media screen and (max-width: 700px) {
     
       .content_container{
@@ -98,9 +88,7 @@
           height: 18vh;
           padding: 5px;
           object-fit: cover;
-
         }
-      
 
       table{
         width:max-content;
@@ -147,57 +135,3 @@
       }
     }  
   }
-
-  //   table, thead, tbody, th, td, tr { 
-  //     display: block;
-  //     margin: 0 auto;
-  //     padding: 1px;
-  // }
-  //   }
-    
-  //   /* Hide table headers (but not display: none;, for accessibility) */
-  //   thead tr { 
-  //     position: absolute;
-  //     top: -9999px;
-  //     left: -9999px;
-  //   }
-    
-  //   tr { border: 1px solid #ccc; }
-    
-  //   td { 
-  //     /* Behave  like a "row" */
-  //     border: none;
-  //     border-bottom: 1px solid #eee; 
-  //     position: relative;
-  //     padding-left: 50%; 
-  //   }
-    
-  //   td:before { 
-  //     /* Now like a table header */
-  //     position: absolute;
-  //     /* Top/left values mimic padding */
-  //     top: 6px;
-  //     left: 6px;
-  //     width: 45%; 
-  //     padding-right: 10px; 
-  //     white-space: nowrap;
-  //   }
-    
-  //   #pen_edit {
-  //     font-size: large;
-  //   }
-  //   #trash_edit {
-  //     font-size: large;
-  //   }
-
-  //   .tbl {
-  //     width: 100%;
-  //     }
-    
-  //     td:nth-of-type(1):before { content: "Märke"; }
-  //     td:nth-of-type(2):before { content: "Model"; }
-  //     td:nth-of-type(3):before { content: "Regnummer"; }
-  //     td:nth-of-type(4):before { content: "Årsmodel"; }
-  //     td:nth-of-type(5):before { content: "Miltal(km)"; }
-  //     td:nth-of-type(6):before { content: "Pris"; }
-      
