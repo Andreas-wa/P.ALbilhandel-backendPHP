@@ -111,30 +111,29 @@
 
     .writecar_wrapper_edit{
         width: 90%;
-    }
+   
+        .cars_edit{
+            width: 60%;
+        }
 
-    .cars_edit{
-        width: 60%;
-    }
+        .cars_edit_description{
+            width: 90%;
+        }
 
-    .cars_edit_description{
-        width: 90%;
-    }
+        .edit_image_div{
+            width: 100%;
+        
+            .edit_image{
+                width: 90%;
+            }
+        }
+        
+        .publish-btn{
+            margin-bottom: 34%;
+        }
 
-    .edit_image_div{
-        width: 100%;
+        #arrow-left{
+            display: none;
+        }
     }
-
-    .edit_image{
-        width: 90%;
-    }
-
-    .publish-btn{
-        margin-bottom: 34%;
-    }
-
-    #arrow-left{
-        display: none;
-    }
-
 }

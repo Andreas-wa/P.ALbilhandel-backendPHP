@@ -66,22 +66,22 @@
   .writecar_wrapper_edit {
     width: 90%;
   }
-  .cars_edit {
+  .writecar_wrapper_edit .cars_edit {
     width: 60%;
   }
-  .cars_edit_description {
+  .writecar_wrapper_edit .cars_edit_description {
     width: 90%;
   }
-  .edit_image_div {
+  .writecar_wrapper_edit .edit_image_div {
     width: 100%;
   }
-  .edit_image {
+  .writecar_wrapper_edit .edit_image_div .edit_image {
     width: 90%;
   }
-  .publish-btn {
+  .writecar_wrapper_edit .publish-btn {
     margin-bottom: 34%;
   }
-  #arrow-left {
+  .writecar_wrapper_edit #arrow-left {
     display: none;
   }
 }
@@ -144,6 +144,12 @@
           align-items: center;
   padding: 10px;
   margin-bottom: 120px;
+}
+
+@media screen and (max-width: 700px) {
+  #arrow-left {
+    display: none;
+  }
 }
 
 .pal-logo-login {
@@ -222,13 +228,10 @@
 }
 
 @media screen and (max-width: 700px) {
-  .login_title {
+  .login_container .login_username {
     width: 100%;
   }
-  .login_username {
-    width: 100%;
-  }
-  .login_password {
+  .login_container .login_password {
     width: 100%;
   }
 }
@@ -399,6 +402,11 @@
 }
 
 @media screen and (max-width: 700px) {
+  .content_container {
+    width: 95vw;
+    padding: 10px;
+    overflow: hidden;
+  }
   .content_container img {
     width: 90%;
     height: 18vh;
@@ -406,34 +414,29 @@
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .content_container {
-    width: 95vw;
-    padding: 10px;
-    overflow: hidden;
-  }
-  table {
+  .content_container table {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
     font-size: small;
   }
-  table th {
+  .content_container table th {
     padding: 15px;
     width: 11%;
   }
-  table td {
+  .content_container table td {
     padding: 15px;
     width: 14%;
   }
-  .table_small {
+  .content_container .table_small {
     margin: auto;
     width: 100%;
     overflow: scroll;
   }
-  .top {
+  .content_container .top {
     display: none;
   }
-  .bot {
+  .content_container .bot {
     font-size: small;
     width: 36rem;
     display: -webkit-box;
@@ -450,10 +453,10 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  #pen_edit {
+  .content_container #pen_edit {
     font-size: large;
   }
-  #trash_edit {
+  .content_container #trash_edit {
     font-size: large;
   }
 }

@@ -61,16 +61,13 @@
 
 @media screen and (max-width: 700px) {
 
-    .login_title{
-        width: 100%;
-    }
+    .login_container{
+        .login_username{
+            width: 100%;
+        }
 
-    .login_username{
-        width: 100%;
+        .login_password{
+            width: 100%;
+        }
     }
-
-    .login_password{
-        width: 100%;
-    }
-
 }
