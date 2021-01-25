@@ -5,81 +5,89 @@
     align-items: center;
     width: 100%;
     padding-top: 4rem;
-}
 
-.content_container_title{
-    display: flex;
-    justify-content: center;
-}
+    #arrow-left{
+      float: left;
+      margin-left: -100px;
+      margin-top: 2px;
+      padding: 10px;
+      color: grey;
+    }
 
-.content_container img{
+    .content_container_title{
+      display: flex;
+      justify-content: center;
+    }
+
+  img{
     width: 18vw;
     height: 18vh;
     padding: 5px;
     object-fit: cover;
-}
+  }
 
-#pen_times{
-    margin-left: -30px;
-    margin-top: 2px;
-    color: rosybrown;
-}
-
-#big_pen_icon{
+  #big_pen_icon{
     padding: 20px;
     color: grey;
-}
+  }
 
-#big_trash_icon{
+  #big_trash_icon{
     padding: 20px;
     color: grey;
-}
+  }
 
-h1 {
+  h1 {
     text-align: center;
   }
-  
-.tbl {
-    overflow-x: auto;
-}
 
-.tbl a {
-    text-decoration: none;
-    color: black;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 1px;
-    width: 80vw;
-}
-    .bot:nth-of-type(even) {
-        background-color: #92a59f;
+  .tbl {
+    a {
+      text-decoration: none;
+      color: black;
     }
+  }
+    table {
+      border-collapse: collapse;
+      border-spacing: 1px;
+      width: 80vw;
+    }
+      .bot:nth-of-type(even) {
+        background-color: #92a59f;
+      }
+
       .bot:hover {
         background-color: #92a59f;
       }
+
       .bot {
         border: 1px solid #333;
       }
+
       .top {
         border: 1px solid #333;
         background-color: grey;
         color: white;
       }
+
       th, td {
         text-align: center;
         padding: 10px;
-        width: 15%;
+        width: 13%;
       }
-    
-    // @media screen and (max-width: 800px) {
-    //   .notOnPhone {
-    //     display: none;
-    //   }
-    // }
+}
+
+
+  
+// .tbl {
+//     // overflow-x: auto;
+// }
+
+
+
+
 
     @media screen and (max-width: 700px) {
+
 
       .content_container img{
         width: 90%;
@@ -90,13 +98,14 @@ table {
     }
     
       .content_container{
-        width: 100vw;
+        width: 95vw;
         padding: 10px;
-
+        overflow: hidden;
       }
 
       table{
-        width: auto;
+        width:max-content;
+        font-size: small;
         
         th{
           padding: 15px;
@@ -106,29 +115,37 @@ table {
         td{
           padding: 15px;
           width: 14%;
+          // display: contents;
         }
       }
 
       .table_small{
         margin: auto;
-        padding: 10px;
+        // padding: 10px;
+        width: 100%;
+        overflow: scroll;
       }
         
-      // .top{
-      //   // width: 100vw;
-      // }
+      .top{
+      display: none;      
+    }
 
       .bot{
         font-size: small;
+        width: 36rem;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
       }
+
       #pen_edit {
         font-size: large;
       }
+
       #trash_edit {
         font-size: large;
       }
-
-      
     }  
 
   //   table, thead, tbody, th, td, tr { 

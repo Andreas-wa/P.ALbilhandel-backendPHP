@@ -3,39 +3,39 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-  }
-
-  .pal-logo{
-    width: auto;
-    height: 4rem;
-  }
-
-  .navbar__link {
-    margin: 1em;
-    font-weight: bold;
-    font-size: 15px;
-    font-family: "Roboto", sans-serif;
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: 0.3em;
-    text-indent: 0.3em;
-    color: #181818;
-    border-bottom: 3px solid transparent;
-  }
-
-  #navbar__link__btn{
-    height: 2rem;
-    border: 0.5px solid grey;
-    border-radius: 2px;
-    background-color: grey;
-    letter-spacing: 0.2em;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-  }
   
-  .navbar__link:hover {
-    transform: translateY(-2px);
+    .pal-logo{
+      width: auto;
+      height: 4rem;
+    }
+
+    .navbar__link {
+      margin: 1em;
+      font-weight: bold;
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.3em;
+      text-indent: 0.3em;
+      color: #181818;
+      border-bottom: 3px solid transparent;
+    }
+
+    #navbar__link__btn{
+      height: 2rem;
+      border: 0.5px solid grey;
+      border-radius: 2px;
+      background-color: grey;
+      letter-spacing: 0.2em;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    
+    .navbar__link:hover {
+      transform: translateY(-2px);
+    }
   }
   
   @media screen and (max-width: 750px) {
@@ -55,11 +55,7 @@
     color: white;
     font-size: 13px;
     font-weight: bold;
-      }
+    }
+    }
   }
-    
-  }
-
-  
-  
-  }
+}

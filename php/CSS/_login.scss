@@ -1,38 +1,27 @@
-
+.pal-logo-login{
+    width: auto;
+    height: 4rem;
+}
 .login_container{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     padding: 6rem;
-}
 
-.pal-logo-login{
-    
-    width: auto;
-    height: 4rem;
-}
-
-.login-user-text{
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.login_username{
+    .login_username{
     width: 25vw;
     border: 1px solid black;
     padding: 5px;
-}
+    }
 
-.login_password{
+    .login_password{
     width: 25vw;
     border: 1px solid black;
     padding: 5px;
-}
+    }
 
-.login_btn{
+    .login_btn{
     width: 6rem;
     height: 2rem;
     border: 1px solid grey;
@@ -40,7 +29,16 @@
     background-color: grey;
     color: white;
     font-weight: bold;
+    }
 }
+
+
+
+.login-user-text{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
 .logout-btn{
     width: 8vw;
@@ -51,12 +49,13 @@
     color: white;
     font-size: 13px;
     font-weight: bold;
-}
 
-.logout-btn a{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+        a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        }
+    }
 }
 
 

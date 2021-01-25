@@ -4,8 +4,9 @@
     if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
     
 
-    echo "<h1 class='writecar-h1'>Lägg till bil</h1>";
     echo "<div class='writecar_wrapper'>";
+    echo "<h1 class='writecar-h1'>Lägg till bil</h1>";
+
     
     echo "<form method='POST' action='Includes/writecar_functions.php' enctype='multipart/form-data'>";
     echo "<div class='writecar-input_container'>";

@@ -1,6 +1,6 @@
-.writecar_wrapper_form{
-    width: 100%;
-}
+// .writecar_wrapper_form{
+//     width: 100%;
+// }
 
 .writecar_wrapper{
     display: flex;
@@ -8,33 +8,41 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-}
 
-.writecar-input_container{
+    .writecar-input_container{
     width: 50%;
     height: 100vh;
-}
 
-.cars_write{
+    #arrow-left{
+        float: left;
+        margin-left: -100px;
+        margin-top: 2px;
+        padding: 10px;
+        color: grey;
+    }
+    }
+
+    .cars_write{
     width: 15vw;
     padding: 4px;
     border: 1px solid black;
     border-radius: 2px;
-}
+    }
 
-.cars_write_description{
+    .cars_write_description{
     border: 1px solid black;
     border-radius: 2px;
-}
-
-.publish-btn{
-        width: 6rem;
-        height: 2rem;
-        border: 1px solid grey;
-        border-radius: 2px;
-        background-color: grey;
-        color: white;
-        font-weight: bold;
+    }
+    
+    .publish-btn{
+    width: 6rem;
+    height: 2rem;
+    border: 1px solid grey;
+    border-radius: 2px;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    }
 }
 
 @media screen and (max-width: 750px) {

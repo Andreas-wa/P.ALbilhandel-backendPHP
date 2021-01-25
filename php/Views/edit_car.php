@@ -120,7 +120,7 @@
 
     // Ändra Bilder
     echo "<b>Bifoga bild:</b><br />";
-    echo "<input type='file'  name='file[]' id='fileToUpload' multiple><br />";
+    echo "<input type='file'  name='file[]' id='fileToUpload' multiple required><br />";
     echo "<br />";
 
     echo "<div class='edit_image_div'>";

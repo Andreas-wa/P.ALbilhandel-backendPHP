@@ -172,7 +172,7 @@
             echo '<td>' . $row['distance'] . '</td>';
             echo '<td>' . $row['price'] . '</td>';
             if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
-                echo "<td><a href='index.php?page=editcar&car=" . $row["id"] . "'><i class='fas fa-pen fa-2x' id='pen_edit'></i></a><td>";
+                echo "<td><a href='index.php?page=editcar&car=" . $row["id"] . "'><i class='fas fa-pen fa-2x' id='pen_edit'></i></a></td>";
                 echo "<td><a href='Includes/delete_car.php?car=" . $row["id"] . "'><i class='fas fa-trash-alt fa-2x' id='trash_edit'></i></a></td>";
             }
             echo "</tr>";
