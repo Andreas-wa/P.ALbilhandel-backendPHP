@@ -18,7 +18,7 @@
       text-decoration: none;
       letter-spacing: 0.3em;
       text-indent: 0.3em;
-      color: #181818;
+      color: $text-navcolor;
       border-bottom: 3px solid transparent;
     }
 
@@ -26,9 +26,9 @@
       height: 2rem;
       border: 0.5px solid grey;
       border-radius: 2px;
-      background-color: grey;
+      background-color: $background_btn;
       letter-spacing: 0.2em;
-      color: white;
+      color: $fontColor;
       font-weight: bold;
       font-size: 1rem;
     }
@@ -51,8 +51,8 @@
     height: 5vh;
     border: 1px solid grey;
     border-radius: 2px;
-    background-color: grey;
-    color: white;
+    background-color: $background_btn;
+    color: $fontColor;
     font-size: 13px;
     font-weight: bold;
     }

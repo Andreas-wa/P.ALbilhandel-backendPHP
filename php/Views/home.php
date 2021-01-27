@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +7,10 @@
 </head>
 <body>
 
-<nav class="navbar">
-                <img src="logoTransp.png" class="pal-logo" alt="logo for the company" srcset="">
-                <a href="http://localhost:3000/admin/messages" class="navbar__link">Meddelanden</a>
-                <a href="" class="navbar__link">Bilar</a>
+    <nav class="navbar">
+        <img src="logoTransp.png" class="pal-logo" alt="logo for the company" srcset="">
+        <a href="http://localhost:3000/admin/messages" class="navbar__link">Meddelanden</a>
+        <a href="" class="navbar__link">Bilar</a>
 
 <?php
     session_start();
@@ -24,20 +23,17 @@
 <?php if (!isset($_SESSION['username'])){ ?>
             <nav class="navbar_admin">
                 
-                <form method="POST" action="index.php?page=login">
-                    <button class ="navbar__link" id="navbar__link__btn" type="submit">Logga In</button>
-                </form>    
+            <form method="POST" action="index.php?page=login">
+                <button class ="navbar__link" id="navbar__link__btn" type="submit">Logga In</button>
+            </form>    
                 <center><?php echo (!isset($_SESSION['username']) ? "" : "");?></center>
-
             </nav>
-
 
 <?php
 }
     echo "</div>";
 ?>  
-            </nav>
-
+    </nav>
 
         <div class="content_container">
     <?php

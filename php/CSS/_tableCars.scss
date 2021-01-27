@@ -11,7 +11,7 @@
       margin-left: -100px;
       margin-top: 2px;
       padding: 10px;
-      color: grey;
+      color: $icon-color;
     }
 
     .content_container_title{
@@ -28,12 +28,12 @@
 
   #big_pen_icon{
     padding: 20px;
-    color: grey;
+    color: $icon-color;
   }
 
   #big_trash_icon{
     padding: 20px;
-    color: grey;
+    color: $icon-color;
   }
 
   h1 {
@@ -52,11 +52,11 @@
       width: 80vw;
     }
       .bot:nth-of-type(even) {
-        background-color: #92a59f;
+        background-color: $tableHover;
       }
 
       .bot:hover {
-        background-color: #92a59f;
+        background-color: $tableHover;
       }
 
       .bot {
@@ -65,8 +65,8 @@
 
       .top {
         border: 1px solid #333;
-        background-color: grey;
-        color: white;
+        background-color: $background_btn;
+        color: $fontColor;
       }
 
       th, td {

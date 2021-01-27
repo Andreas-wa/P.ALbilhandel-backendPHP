@@ -10,7 +10,7 @@
 #fa-edit {
   margin-top: -30px;
   padding: 30px;
-  color: grey;
+  color: #6c7773;
 }
 
 .writecar_wrapper_edit {
@@ -22,13 +22,13 @@
   margin-left: -100px;
   margin-top: 2px;
   padding: 10px;
-  color: grey;
+  color: #6c7773;
 }
 
 .writecar_wrapper_edit #pen_times {
   margin-left: -30px;
   margin-top: 2px;
-  color: grey;
+  color: rosybrown;
 }
 
 .writecar_wrapper_edit .cars_edit {
@@ -192,7 +192,7 @@
   border: 1px solid grey;
   border-radius: 2px;
   background-color: grey;
-  color: grey;
+  color: white;
   font-weight: bold;
 }
 
@@ -216,7 +216,7 @@
   border: 1px solid grey;
   border-radius: 2px;
   background-color: grey;
-  color: grey;
+  color: white;
   font-size: 13px;
   font-weight: bold;
 }
@@ -332,7 +332,7 @@
   margin-left: -100px;
   margin-top: 2px;
   padding: 10px;
-  color: grey;
+  color: #6c7773;
 }
 
 .content_container .content_container_title {
@@ -354,12 +354,12 @@
 
 .content_container #big_pen_icon {
   padding: 20px;
-  color: grey;
+  color: #6c7773;
 }
 
 .content_container #big_trash_icon {
   padding: 20px;
-  color: grey;
+  color: #6c7773;
 }
 
 .content_container h1 {
@@ -488,7 +488,7 @@
   margin-left: -100px;
   margin-top: 2px;
   padding: 10px;
-  color: grey;
+  color: #6c7773;
 }
 
 .writecar_wrapper .cars_write {

@@ -18,7 +18,7 @@
             margin-left: -100px;
             margin-top: 2px;
             padding: 10px;
-            color: grey;
+            color: $icon-color;
         }
     }
 
@@ -39,8 +39,8 @@
     height: 2rem;
     border: 1px solid grey;
     border-radius: 2px;
-    background-color: grey;
-    color: white;
+    background-color: $background_btn;
+    color: $fontColor;
     font-weight: bold;
     }
 }

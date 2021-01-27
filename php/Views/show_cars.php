@@ -1,18 +1,22 @@
     <?php    
- 
+    
+    // bestämmer hur datan kommer att skivas ut
     $order = 'desc';
 
     if (isset($_GET['car'])){
 
+        // sql query för bil data 
         $car_id = $_GET['car'];
         $query_car_data = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, date FROM cars WHERE id = $car_id";
         $return = $dbh->query($query_car_data);
         $row = $return->fetch(PDO::FETCH_ASSOC);
 
+        // SQL query för användarna
         $query_username = "SELECT users.username FROM users JOIN cars ON cars.userID = users.id WHERE cars.id = $car_id";
         $return_username = $dbh->query($query_username);
         $row_username = $return_username->fetch(PDO::FETCH_ASSOC);
 
+        // SQL query för bilderna
         $query_image = "SELECT images.file_name FROM images JOIN cars ON cars.id = images.car_id WHERE cars.id = $car_id";
         $return_image = $dbh->query($query_image);
         $row_image = $return_image->fetchAll(PDO::FETCH_ASSOC);
@@ -28,7 +32,7 @@
 
             echo "<br />";
 
-            // div för tillverkaren
+            // div för tillverkaren/ märke
             echo "<div class='car_wrapper_manufacturers'>";
             echo "<b>Märke: </b>" . $row['manufacturers'] . "<br />";
             echo "</div>";
@@ -117,6 +121,7 @@
     }
     
 
+    // hämtar data som ska vissas på första sidan
     $query_shopcars = "SELECT id, userID, model, reg, description, manufacturers, year, distance, price, date FROM cars ORDER BY date $order";
     $rows_cars = $dbh->query($query_shopcars);
     
@@ -128,10 +133,12 @@
  
         }     
     } else {
+        // om man har admin role kommer man åt editerings knappen
             if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
                 echo "<a href='index.php?page=writecar' id='fa-edit'><i class='far fa-edit fa-3x'></i></a>";
             }
 
+            // tabel för bilarna/datan
         echo "<div class='table_small'>";
 
         echo '<table>';
@@ -144,6 +151,7 @@
             echo '<th className="notOnPhone">Årsmodell</th>';
             echo '<th className="notOnPhone">Miltal</th>';
             echo '<th>Pris</th>';
+            // med admin role kommer det upp två extra titlar för edit och delete
             if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
                 echo '<th>Redigera</th>';
                 echo '<th>Delete</th>';
@@ -170,6 +178,7 @@
             echo '<td>' . $row['year'] . '</td>';
             echo '<td>' . $row['distance'] . '</td>';
             echo '<td>' . $row['price'] . '</td>';
+            // alla med admin role kan redigera och ta bort datan
             if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
                 echo "<td><a href='index.php?page=editcar&car=" . $row["id"] . "'><i class='fas fa-pen fa-2x' id='pen_edit'></i></a></td>";
                 echo "<td><a href='Includes/delete_car.php?car=" . $row["id"] . "'><i class='fas fa-trash-alt fa-2x' id='trash_edit'></i></a></td>";

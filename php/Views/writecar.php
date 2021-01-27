@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+    // om en role är satt skriv ut datan 
     if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
     
 
@@ -116,6 +117,7 @@
 }
 
 else{
+    // om det inte finns en role kommer den att skriva ut error meddelande
     echo "ajabaja inga hackerattacker här inte!";
 }
 ?>

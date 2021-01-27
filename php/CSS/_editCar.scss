@@ -6,7 +6,7 @@
 #fa-edit{
     margin-top: -30px;
     padding: 30px;
-    color: grey;
+    color: $icon-color;
 }
 
 .writecar_wrapper_edit{
@@ -17,13 +17,13 @@
         margin-left: -100px;
         margin-top: 2px;
         padding: 10px;
-        color: grey;
+        color: $icon-color;
     }
 
     #pen_times{
         margin-left: -30px;
         margin-top: 2px;
-        color: grey;
+        color: $exit;
       }
     
 
@@ -52,58 +52,6 @@
     }
     }
 }
-
-// .writecar_wrapper_edit_inputs{
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: row;
-//     align-items: center;
-//     flex-wrap: wrap;
-//     // padding: 20px;
-// }
-
-// .manu_edit{
-//     display: flex;
-//     flex-direction: column;
-//     padding-left: 10px;
-//     padding-right: 10px;
-
-// }
-
-// .model_edit{
-//     display: flex;
-//     flex-direction: column;
-//     padding-left: 10px;
-//     padding-right: 10px;
-// }
-
-// .reg_edit{
-//     display: flex;
-//     flex-direction: column;
-//     padding-left: 10px;
-//     padding-right: 10px;
-// }
-
-// .dist_edit{
-//     display: flex;
-//     flex-direction: column;
-//     padding-left: 10px;
-//     padding-right: 10px;
-// }
-
-// .year_edit{
-//     display: flex;
-//     flex-direction: column;
-//     padding-left: 10px;
-//     padding-right: 10px;
-// }
-
-// .price_edit{
-//     display: flex;
-//     flex-direction: column;
-//     padding-left: 10px;
-//     padding-right: 10px;
-// }
 
 
 @media screen and (max-width: 750px) {

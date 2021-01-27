@@ -12,6 +12,7 @@
 <body>
 
 <?php
+// kopplar databasen
 include('Includes/database_connections.php');
 
 $page = (isset($_GET['page']) ? $_GET['page'] : '');
@@ -26,10 +27,6 @@ if(!$page){
 
 if($page == "editcar"){
     include("Views/edit_car.php");
-}
-
-if($page == "signup"){
-    include("Views/signUp.php");
 }
 
 if($page == "home"){
